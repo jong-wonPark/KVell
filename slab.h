@@ -52,8 +52,10 @@ struct slab* create_slab(struct slab_context *ctx, int worker_id, size_t item_si
 struct slab* resize_slab(struct slab *s);
 
 void *read_item(struct slab *s, size_t idx);
+void read_item_async_cb(struct slab_callback *callback);
 void read_item_async(struct slab_callback *callback);
 void add_item_async(struct slab_callback *callback);
+void update_item_async_cb2(struct slab_callback *callback);
 void update_item_async(struct slab_callback *callback);
 void remove_item_async(struct slab_callback *callback);
 

@@ -229,7 +229,8 @@ again:
             if(!e) { // Item is not in DB
                callback->slab = NULL;
                callback->slab_idx = -1;
-               callback->cb(callback, NULL);
+               callback->complete = true;
+               //callback->cb(callback, NULL);
             } else {
                callback->slab = e->slab;
                callback->slab_idx = e->slab_idx;

@@ -201,7 +201,7 @@ void compute_stats(struct slab_callback *cb, void *item) {
       free(cb->item);
       if(DEBUG)
          free_payload(cb);
-      free(cb);
+      //free(cb);
    } stop_debug_timer(5000, "Callback took more than 5ms???");
 }
 

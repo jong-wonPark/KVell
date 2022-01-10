@@ -41,7 +41,19 @@ static void _launch_ycsb(int test, int nb_requests, int zipfian) {
       else
          cb->item = _create_unique_item_ycsb(uniform_next());
       if(random_get_put(test)) { // In these tests we update with a given probability
-         kv_update_async(cb);
+         cb->complete = false;
+         kv_add_or_update_async(cb);
+         while(1) {
+            if (cb->complete){
+               break;
+            }
+            else{
+               NOP10();
+               if(!PINNING)
+                  usleep(2);
+            }
+         }
+         free(cb);
       } else { // or we read
          cb->complete = false;
          kv_read_async(cb);
@@ -55,7 +67,7 @@ static void _launch_ycsb(int test, int nb_requests, int zipfian) {
                   usleep(2);
             }
          }
-         cb->io_cb(cb);
+         free(cb);
       }
       periodic_count(1000, "YCSB Load Injector (%lu%%)", i*100LU/nb_requests);
    }

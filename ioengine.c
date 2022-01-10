@@ -88,7 +88,7 @@ static void process_linked_callbacks(struct io_context *ctx) {
          struct linked_callbacks *next = linked_cb->next;
          struct slab_callback *callback = linked_cb->callback;
          if(callback->lru_entry->contains_data) {
-            if (callback->action != READ)
+            //if (callback->action != READ)
                callback->io_cb(callback);
             free(linked_cb);
          } else { // page has not been prefetched yet, it's likely in the list of pages that will be read during the next kernel call
@@ -165,16 +165,18 @@ char *read_page_async(struct slab_callback *callback) {
    alread_used = get_page(get_pagecache(callback->slab->ctx), hash, &disk_page, &lru_entry);
    callback->lru_entry = lru_entry;
    if(lru_entry->contains_data) {   // content is cached already
-      if (callback->action != READ)
+      //if (callback->action != READ)
          callback->io_cb(callback);       // call the callback directly
-      callback->complete = true;
+      if (callback->action == READ)
+         callback->complete = true;
       return disk_page;
    }
 
    if(alread_used) { // Somebody else is already prefetching the same page!
       struct linked_callbacks *linked_cb = malloc(sizeof(*linked_cb));
       linked_cb->callback = callback;
-      callback->complete = true;
+      if (callback->action == READ)
+         callback->complete = true;
       linked_cb->next = ctx->linked_callbacks;
       ctx->linked_callbacks = linked_cb; // link our callback
       return NULL;
@@ -288,10 +290,15 @@ void worker_ioengine_process_completed_ios(struct io_context *ctx) {
          struct slab_callback *callback = (void*)cb->aio_data;
          assert(ctx->events[i].res == 4096); // otherwise page hasn't been read
          callback->lru_entry->contains_data = 1;
-         callback->complete = true;
          //callback->lru_entry->dirty = 0; // done before
-         if (callback->action != READ)
+         if ((callback->action == READ && callback->io_cb == read_item_async_cb) || ((callback->action == UPDATE || callback->action == ADD) && callback->io_cb == update_item_async_cb2)){
+            callback->complete = true;
+	    //printf("\ncomplete\n");
+         }
+         //else{
             callback->io_cb(callback);
+	    //printf("\ncallback\n");
+         //}
       }
 
       // We might have "linked callbacks" so process them
