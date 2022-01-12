@@ -42,7 +42,7 @@ char *create_workload_item(struct workload *w) {
 static void add_in_tree(struct slab_callback *cb, void *item) {
    memory_index_add(cb, item);
    free(cb->item);
-   free(cb);
+   //free(cb);
 }
 
 struct rebuild_pdata {
@@ -68,7 +68,20 @@ void *repopulate_db_worker(void *pdata) {
       cb->cb = add_in_tree;
       cb->payload = NULL;
       cb->item = api->create_unique_item(pos[i], w->nb_items_in_db);
+      cb->complete = false;
       kv_add_async(cb);
+      while(1) {
+         if (cb->complete){
+            break;
+         }
+         else{
+            NOP10();
+            if(!PINNING)
+               usleep(2);
+         }
+      }
+      if (cb != NULL)
+         free(cb);
       periodic_count(1000, "Repopulating database (%lu%%)", 100LU-(end-i)*100LU/(end - start));
    }
 
