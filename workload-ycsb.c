@@ -53,7 +53,8 @@ static void _launch_ycsb(int test, int nb_requests, int zipfian) {
                   usleep(2);
             }
          }
-         free(cb);
+         if (cb != NULL)
+            free(cb);
       } else { // or we read
          cb->complete = false;
          kv_read_async(cb);
@@ -67,7 +68,8 @@ static void _launch_ycsb(int test, int nb_requests, int zipfian) {
                   usleep(2);
             }
          }
-         free(cb);
+         if (cb != NULL)
+            free(cb);
       }
       periodic_count(1000, "YCSB Load Injector (%lu%%)", i*100LU/nb_requests);
    }

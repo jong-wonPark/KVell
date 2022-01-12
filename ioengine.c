@@ -90,6 +90,7 @@ static void process_linked_callbacks(struct io_context *ctx) {
          if(callback->lru_entry->contains_data) {
             //if (callback->action != READ)
                callback->io_cb(callback);
+               callback->complete = true;
             free(linked_cb);
          } else { // page has not been prefetched yet, it's likely in the list of pages that will be read during the next kernel call
             linked_cb->next = ctx->linked_callbacks;
@@ -175,8 +176,8 @@ char *read_page_async(struct slab_callback *callback) {
    if(alread_used) { // Somebody else is already prefetching the same page!
       struct linked_callbacks *linked_cb = malloc(sizeof(*linked_cb));
       linked_cb->callback = callback;
-      if (callback->action == READ)
-         callback->complete = true;
+      //if (callback->action == READ)
+      //   callback->complete = true;
       linked_cb->next = ctx->linked_callbacks;
       ctx->linked_callbacks = linked_cb; // link our callback
       return NULL;
@@ -291,12 +292,12 @@ void worker_ioengine_process_completed_ios(struct io_context *ctx) {
          assert(ctx->events[i].res == 4096); // otherwise page hasn't been read
          callback->lru_entry->contains_data = 1;
          //callback->lru_entry->dirty = 0; // done before
-         if ((callback->action == READ && callback->io_cb == read_item_async_cb) || ((callback->action == UPDATE || callback->action == ADD) && callback->io_cb == update_item_async_cb2)){
-            callback->complete = true;
-	    //printf("\ncomplete\n");
-         }
          //else{
             callback->io_cb(callback);
+         if ((callback->action == READ && callback->io_cb == read_item_async_cb) || ((callback->action == UPDATE || callback->action == ADD) && callback->io_cb == update_item_async_cb2)){
+            callback->complete = true;
+       //printf("\ncomplete\n");
+         }
 	    //printf("\ncallback\n");
          //}
       }

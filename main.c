@@ -50,6 +50,7 @@ int main(int argc, char **argv) {
       ycsb_c_zipfian, //ycsb_b_zipfian, ycsb_c_zipfian,
       //ycsb_e_uniform, ycsb_e_zipfian, // Scans
    };
+   
    foreach(workload, workloads) {
       if(workload == ycsb_e_uniform || workload == ycsb_e_zipfian) {
          w.nb_requests = 200LU;//2000000LU; // requests for YCSB E are longer (scans) so we do less
