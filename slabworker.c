@@ -242,7 +242,12 @@ again:
             break;
          case ADD:
             if(e) {
-               die("Adding item that is already in the database! Use update instead! (This error might also appear if 2 keys have the same prefix, TODO: make index more robust to that.)\n");
+               //die("Adding item that is already in the database! Use update instead! (This error might also appear if 2 keys have the same prefix, TODO: make index more robust to that.)\n");
+	       callback->action = UPDATE;
+               callback->slab = e->slab;
+               callback->slab_idx = e->slab_idx;
+               assert(get_item_size(callback->item) <= e->slab->item_size); // Item grew, this is not supported currently!
+               update_item_async(callback);
             } else {
                callback->slab = get_slab(ctx, callback->item);
                callback->slab_idx = -1;
@@ -250,11 +255,16 @@ again:
             }
             break;
          case UPDATE:
+	    ctx->real_processed_callbacks++;
             if(!e) {
-               callback->slab = NULL;
+               //callback->slab = NULL;
+               //callback->slab_idx = -1;
+               //callback->cb(callback, NULL);
+	       callback->slab = get_slab(ctx, callback->item);
                callback->slab_idx = -1;
-               callback->cb(callback, NULL);
+               add_item_async(callback);
             } else {
+               ctx->real_processed_callbacks++;
                callback->slab = e->slab;
                callback->slab_idx = e->slab_idx;
                assert(get_item_size(callback->item) <= e->slab->item_size); // Item grew, this is not supported currently!
@@ -264,11 +274,13 @@ again:
          case ADD_OR_UPDATE:
             ctx->real_processed_callbacks++;
             if(!e) {
+               printf("ADD\n");
                callback->action = ADD;
                callback->slab = get_slab(ctx, callback->item);
                callback->slab_idx = -1;
                add_item_async(callback);
             } else {
+               printf("UPDATE\n");
                callback->action = UPDATE;
                callback->slab = e->slab;
                callback->slab_idx = e->slab_idx;

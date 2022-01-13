@@ -42,7 +42,9 @@ static void _launch_ycsb(int test, int nb_requests, int zipfian) {
          cb->item = _create_unique_item_ycsb(uniform_next());
       if(random_get_put(test)) { // In these tests we update with a given probability
          cb->complete = false;
-         kv_add_or_update_async(cb);
+	 //printf("LI start\n");
+         //kv_add_or_update_async(cb);
+	 kv_update_async(cb);
          while(1) {
             if (cb->complete){
                break;
@@ -53,6 +55,7 @@ static void _launch_ycsb(int test, int nb_requests, int zipfian) {
                   usleep(2);
             }
          }
+	 //printf("LI finish\n");
          if (cb != NULL)
             free(cb);
       } else { // or we read
