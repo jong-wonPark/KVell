@@ -200,7 +200,7 @@
                count_diff, \
                count_diff * period * 1000 / cycles_to_us(elapsed), \
                count_diff/__breakdown.loops, \
-               elapsed / count_diff \
+               elapsed / (count_diff+1) \
                ); \
          __breakdown.real_start = __breakdown.now; \
          __breakdown.evt1 = 0; \

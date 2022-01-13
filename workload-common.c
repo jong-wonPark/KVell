@@ -43,6 +43,7 @@ static void add_in_tree(struct slab_callback *cb, void *item) {
    memory_index_add(cb, item);
    free(cb->item);
    //free(cb);
+   cb->complete = true;
 }
 
 struct rebuild_pdata {
@@ -215,6 +216,7 @@ void compute_stats(struct slab_callback *cb, void *item) {
       if(DEBUG)
          free_payload(cb);
       //free(cb);
+      cb->complete = true;
    } stop_debug_timer(5000, "Callback took more than 5ms???");
 }
 

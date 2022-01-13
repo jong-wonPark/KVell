@@ -51,6 +51,7 @@ struct slab_context {
    volatile size_t buffered_callbacks_idx;               // Number of requests enqueued or in the process of being enqueued
    volatile size_t sent_callbacks;                       // Number of requests fully enqueued
    volatile size_t processed_callbacks;                  // Number of requests fully submitted and processed on disk
+   volatile size_t real_processed_callbacks;             // Number of requests fully submitted and processed on disk 
    size_t max_pending_callbacks;                         // Maximum number of enqueued requests
    struct pagecache *pagecache __attribute__((aligned(64)));
    struct io_context *io_ctx;
@@ -229,12 +230,14 @@ again:
             if(!e) { // Item is not in DB
                callback->slab = NULL;
                callback->slab_idx = -1;
-               callback->complete = true;
                callback->cb(callback, NULL);
+	       //callback->complete = true;
+	       //ctx->processed_callbacks--;
             } else {
                callback->slab = e->slab;
                callback->slab_idx = e->slab_idx;
                read_item_async(callback);
+               ctx->real_processed_callbacks++;
             }
             break;
          case ADD:
@@ -259,6 +262,7 @@ again:
             }
             break;
          case ADD_OR_UPDATE:
+            ctx->real_processed_callbacks++;
             if(!e) {
                callback->action = ADD;
                callback->slab = get_slab(ctx, callback->item);
@@ -374,7 +378,7 @@ static void *worker_slab_init(void *pdata) {
 
       worker_dequeue_requests(ctx); __5 // Process queue
 
-      show_breakdown_periodic(1000, ctx->processed_callbacks, "io_submit", "io_getevents", "io_cb", "wait", "slab_cb");
+      show_breakdown_periodic(1000, ctx->real_processed_callbacks, "io_submit", "io_getevents", "io_cb", "wait", "slab_cb");
    }
 
    return NULL;
