@@ -55,7 +55,7 @@ int main(int argc, char **argv) {
       if(workload == ycsb_e_uniform || workload == ycsb_e_zipfian) {
          w.nb_requests = 200LU;//2000000LU; // requests for YCSB E are longer (scans) so we do less
       } else {
-         w.nb_requests = 100000000LU;
+         w.nb_requests = 10000000LU;
       }
       run_workload(&w, workload);
    }
