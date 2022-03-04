@@ -7,7 +7,8 @@ int main(int argc, char **argv) {
    /* Definition of the workload, if changed you need to erase the DB before relaunching */
    struct workload w = {
       .api = &YCSB,
-      .nb_items_in_db = 300000000LU,
+      //.nb_items_in_db = 300000000LU,
+      .nb_items_in_db = 10000000LU,
       .nb_load_injectors = 8,
       //.nb_load_injectors = 12, // For scans (see scripts/run-aws.sh and OVERVIEW.md)
    };

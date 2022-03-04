@@ -6,9 +6,10 @@
 #include "workload-common.h"
 
 static char *_create_unique_item_ycsb(uint64_t uid) {
-   size_t item_size = 1024;
+//   size_t item_size = 1024;
    //size_t item_size = sizeof(struct item_metadata) + 2*sizeof(size_t);
-   return create_unique_item(item_size, uid);
+	size_t	item_size = sizeof(struct item_metadata) + 1024;	// meta + (key+value) 1024 
+	return create_unique_item(item_size, uid);
 }
 
 static char *create_unique_item_ycsb(uint64_t uid, uint64_t max_uid) {
@@ -42,7 +43,7 @@ static void _launch_ycsb(int test, int nb_requests, int zipfian) {
          cb->item = _create_unique_item_ycsb(uniform_next());
       if(random_get_put(test)) { // In these tests we update with a given probability
          cb->complete = false;
-	 //printf("LI start\n");
+	  //printf("LI start\n");
          //kv_add_or_update_async(cb);
 	 kv_update_async(cb);
          while(1) {

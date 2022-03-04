@@ -6,13 +6,43 @@
 char *create_unique_item(size_t item_size, uint64_t uid) {
    char *item = malloc(item_size);
    struct item_metadata *meta = (struct item_metadata *)item;
-   meta->key_size = 8;
-   meta->value_size = item_size - 8 - sizeof(*meta);
+//   meta->key_size = 8;
+//  meta->value_size = item_size - 8 - sizeof(*meta);
+   
+   meta->key_size = 24;
+   meta->value_size = item_size - 24 - sizeof(*meta);	// 1000
 
-   char *item_key = &item[sizeof(*meta)];
+//   char *item_key = &item[sizeof(*meta)];
    char *item_value = &item[sizeof(*meta) + meta->key_size];
-   *(uint64_t*)item_key = uid;
+
+   // convert (uint64)uid to (string)uid
+   char s_uid[20], pad_uid[25];
+
+   sprintf(s_uid,"%lu",uid);
+
+   pad_uid[0]='u';
+   pad_uid[1]='s';
+   pad_uid[2]='e';
+   pad_uid[3]='r';
+
+   for(int i=4;i<24;i++)	pad_uid[i]='0';
+   pad_uid[24]='\0';
+
+   int digit=strlen(s_uid);
+
+   for(int i=0;i<digit;i++){
+	   pad_uid[i+24-digit]=s_uid[i];
+   }
+
+   for(int i=0;i<24;i++){
+	   item[sizeof(*meta)+i] = pad_uid[i];
+   }
+
+//   printf("digit: %d s_uid: %s pad_uid %s\n",digit, s_uid, pad_uid);
+
+//   *(uint64_t*)item_key = uid;
    *(uint64_t*)item_value = uid;
+
    return item;
 }
 

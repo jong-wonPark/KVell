@@ -1,0 +1,1105 @@
+Binary file benchcomponents matches
+slabworker.c:116:   char *item_key = &item[sizeof(*meta)];
+slabworker.c:117:   return *(uint64_t*)item_key;
+slabworker.c:128:   return sizeof(*meta) + meta->key_size + meta->value_size;
+slabworker.c:245:               //die("Adding item that is already in the database! Use update instead! (This error might also appear if 2 keys have the same prefix, TODO: make index more robust to that.)\n");
+Binary file workload-common.o matches
+Binary file in-memory-index-rbtree.o matches
+tags:280:art_callback	indexes/art.h	/^typedef int(*art_callback)(void *data, const unsigned char *key, uint32_t key_len, void *value);$/;"	t
+tags:281:art_callback_scan	indexes/art.c	/^int art_callback_scan(void *data, const unsigned char *key, uint32_t key_len, void *value) {$/;"	f
+tags:282:art_delete	indexes/art.c	/^void* art_delete(art_tree *t, const unsigned char *key, int key_len) {$/;"	f
+tags:283:art_find_n	indexes/art.c	/^struct index_scan art_find_n(art_tree *t, const unsigned char *key, int key_len, size_t n) {$/;"	f
+tags:287:art_insert	indexes/art.c	/^void* art_insert(art_tree *t, const unsigned char *key, int key_len, void *value) {$/;"	f
+tags:289:art_iter_prefix	indexes/art.c	/^int art_iter_prefix(art_tree *t, const unsigned char *key, int key_len, art_callback cb, void *data) {$/;"	f
+tags:298:art_search	indexes/art.c	/^void* art_search(const art_tree *t, const unsigned char *key, int key_len) {$/;"	f
+tags:327:binary_search_compare_to_type	indexes/cpp-btree/btree.h	/^    key_type, self_type, key_compare> binary_search_compare_to_type;$/;"	t	class:btree::btree_node
+tags:329:binary_search_plain_compare_type	indexes/cpp-btree/btree.h	/^    key_type, self_type, key_compare> binary_search_plain_compare_type;$/;"	t	class:btree::btree_node
+tags:335:bool_compare	indexes/cpp-btree/btree.h	/^  static bool bool_compare(const Compare &comp, const Key &x, const Key &y) {$/;"	f	struct:btree::btree_key_comparer
+tags:336:btree	indexes/cpp-btree/btree.h	/^class btree : public Params::key_compare {$/;"	c	namespace:btree
+tags:344:btree_compare_keys	indexes/cpp-btree/btree.h	/^static bool btree_compare_keys($/;"	f	namespace:btree
+tags:345:btree_container	indexes/cpp-btree/btree_container.h	/^  btree_container(const key_compare &comp, const allocator_type &alloc)$/;"	f	class:btree::btree_container
+tags:352:btree_forall_keys	indexes/btree.cc	/^   void btree_forall_keys(btree_t *t, void (*cb)(uint64_t h, void *data), void *data) {$/;"	f
+tags:360:btree_is_key_compare_to	indexes/cpp-btree/btree.h	/^struct btree_is_key_compare_to$/;"	s	namespace:btree
+tags:366:btree_key_compare_to_adapter	indexes/cpp-btree/btree.h	/^  btree_key_compare_to_adapter($/;"	f	struct:btree::btree_key_compare_to_adapter
+tags:367:btree_key_compare_to_adapter	indexes/cpp-btree/btree.h	/^  btree_key_compare_to_adapter() { }$/;"	f	struct:btree::btree_key_compare_to_adapter
+tags:368:btree_key_compare_to_adapter	indexes/cpp-btree/btree.h	/^  btree_key_compare_to_adapter() {}$/;"	f	struct:btree::btree_key_compare_to_adapter
+tags:369:btree_key_compare_to_adapter	indexes/cpp-btree/btree.h	/^  btree_key_compare_to_adapter(const Compare &c) : Compare(c) { }$/;"	f	struct:btree::btree_key_compare_to_adapter
+tags:370:btree_key_compare_to_adapter	indexes/cpp-btree/btree.h	/^  btree_key_compare_to_adapter(const btree_key_compare_to_adapter<Compare> &c)$/;"	f	struct:btree::btree_key_compare_to_adapter
+tags:371:btree_key_compare_to_adapter	indexes/cpp-btree/btree.h	/^  btree_key_compare_to_adapter(const std::greater<std::string>&) {}$/;"	f	struct:btree::btree_key_compare_to_adapter
+tags:372:btree_key_compare_to_adapter	indexes/cpp-btree/btree.h	/^  btree_key_compare_to_adapter(const std::less<std::string>&) {}$/;"	f	struct:btree::btree_key_compare_to_adapter
+tags:373:btree_key_compare_to_adapter	indexes/cpp-btree/btree.h	/^struct btree_key_compare_to_adapter : Compare {$/;"	s	namespace:btree
+tags:374:btree_key_compare_to_adapter	indexes/cpp-btree/btree.h	/^struct btree_key_compare_to_adapter<std::greater<std::string> >$/;"	s	namespace:btree
+tags:375:btree_key_compare_to_adapter	indexes/cpp-btree/btree.h	/^struct btree_key_compare_to_adapter<std::less<std::string> >$/;"	s	namespace:btree
+tags:376:btree_key_compare_to_tag	indexes/cpp-btree/btree.h	/^struct btree_key_compare_to_tag {$/;"	s	namespace:btree
+tags:377:btree_key_comparer	indexes/cpp-btree/btree.h	/^  btree_key_comparer() {}$/;"	f	struct:btree::btree_key_comparer
+tags:378:btree_key_comparer	indexes/cpp-btree/btree.h	/^  btree_key_comparer(Compare c) : comp(c) {}$/;"	f	struct:btree::btree_key_comparer
+tags:379:btree_key_comparer	indexes/cpp-btree/btree.h	/^struct btree_key_comparer {$/;"	s	namespace:btree
+tags:380:btree_key_comparer	indexes/cpp-btree/btree.h	/^struct btree_key_comparer<Key, Compare, true> {$/;"	s	namespace:btree
+tags:384:btree_map	indexes/cpp-btree/btree_map.h	/^  btree_map(const key_compare &comp = key_compare(),$/;"	f	class:btree::btree_map
+tags:388:btree_map_container	indexes/cpp-btree/btree_container.h	/^  btree_map_container(const key_compare &comp = key_compare(),$/;"	f	class:btree::btree_map_container
+tags:393:btree_multi_container	indexes/cpp-btree/btree_container.h	/^  btree_multi_container(const key_compare &comp = key_compare(),$/;"	f	class:btree::btree_multi_container
+tags:397:btree_multimap	indexes/cpp-btree/btree_map.h	/^  btree_multimap(const key_compare &comp = key_compare(),$/;"	f	class:btree::btree_multimap
+tags:401:btree_multiset	indexes/cpp-btree/btree_set.h	/^  btree_multiset(const key_compare &comp = key_compare(),$/;"	f	class:btree::btree_multiset
+tags:406:btree_set	indexes/cpp-btree/btree_set.h	/^  btree_set(const key_compare &comp = key_compare(),$/;"	f	class:btree::btree_set
+tags:417:btree_unique_container	indexes/cpp-btree/btree_container.h	/^  btree_unique_container(const key_compare &comp = key_compare(),$/;"	f	class:btree::btree_unique_container
+tags:436:check_prefix	indexes/art.c	/^static int check_prefix(const art_node *n, const unsigned char *key, int key_len, int depth) {$/;"	f	file:
+tags:444:cmp_key_index	indexes/art.c	/^static int cmp_key_index(const void *_a, const void *_b) {$/;"	f	file:
+tags:449:comp	indexes/cpp-btree/btree.h	/^  Compare comp;$/;"	m	struct:btree::btree_key_comparer
+tags:451:compare_keys	indexes/cpp-btree/btree.h	/^  bool compare_keys(const key_type &x, const key_type &y) const {$/;"	f	class:btree::btree
+tags:478:count	indexes/cpp-btree/btree_container.h	/^  size_type count(const key_type &key) const {$/;"	f	class:btree::btree_multi_container
+tags:479:count	indexes/cpp-btree/btree_container.h	/^  size_type count(const key_type &key) const {$/;"	f	class:btree::btree_unique_container
+tags:481:count_multi	indexes/cpp-btree/btree.h	/^  size_type count_multi(const key_type &key) const {$/;"	f	class:btree::btree
+tags:482:count_unique	indexes/cpp-btree/btree.h	/^  size_type count_unique(const key_type &key) const {$/;"	f	class:btree::btree
+tags:496:data	indexes/rax.h	/^    void *data;             \/* Data associated to this key. *\/$/;"	m	struct:raxIterator
+tags:556:equal_range	indexes/cpp-btree/btree.h	/^  std::pair<const_iterator,const_iterator> equal_range(const key_type &key) const {$/;"	f	class:btree::btree
+tags:557:equal_range	indexes/cpp-btree/btree.h	/^  std::pair<iterator,iterator> equal_range(const key_type &key) {$/;"	f	class:btree::btree
+tags:558:equal_range	indexes/cpp-btree/btree_container.h	/^  std::pair<const_iterator,const_iterator> equal_range(const key_type &key) const {$/;"	f	class:btree::btree_container
+tags:559:equal_range	indexes/cpp-btree/btree_container.h	/^  std::pair<iterator,iterator> equal_range(const key_type &key) {$/;"	f	class:btree::btree_container
+tags:560:erase	indexes/cpp-btree/btree_container.h	/^  int erase(const key_type &key) {$/;"	f	class:btree::btree_multi_container
+tags:561:erase	indexes/cpp-btree/btree_container.h	/^  int erase(const key_type &key) {$/;"	f	class:btree::btree_unique_container
+tags:573:find	indexes/cpp-btree/btree_container.h	/^  const_iterator find(const key_type &key) const {$/;"	f	class:btree::btree_multi_container
+tags:574:find	indexes/cpp-btree/btree_container.h	/^  const_iterator find(const key_type &key) const {$/;"	f	class:btree::btree_unique_container
+tags:575:find	indexes/cpp-btree/btree_container.h	/^  iterator find(const key_type &key) {$/;"	f	class:btree::btree_multi_container
+tags:576:find	indexes/cpp-btree/btree_container.h	/^  iterator find(const key_type &key) {$/;"	f	class:btree::btree_unique_container
+tags:578:find_closest	indexes/cpp-btree/btree.h	/^  iterator find_closest(const key_type &key) {$/;"	f	class:btree::btree
+tags:579:find_closest	indexes/cpp-btree/btree_container.h	/^  iterator find_closest(const key_type &key) {$/;"	f	class:btree::btree_unique_container
+tags:580:find_multi	indexes/cpp-btree/btree.h	/^  const_iterator find_multi(const key_type &key) const {$/;"	f	class:btree::btree
+tags:581:find_multi	indexes/cpp-btree/btree.h	/^  iterator find_multi(const key_type &key) {$/;"	f	class:btree::btree
+tags:582:find_unique	indexes/cpp-btree/btree.h	/^  const_iterator find_unique(const key_type &key) const {$/;"	f	class:btree::btree
+tags:583:find_unique	indexes/cpp-btree/btree.h	/^  iterator find_unique(const key_type &key) {$/;"	f	class:btree::btree
+tags:596:generate_value	indexes/cpp-btree/btree_container.h	/^    generate_value(const key_type &k)$/;"	f	struct:btree::btree_map_container::generate_value
+tags:639:hashv	indexes/uthash.h	/^   unsigned hashv;                   \/* result of hash-fcn(key)        *\/$/;"	m	struct:UT_hash_handle
+tags:656:index	indexes/art.c	/^   size_t index;$/;"	m	struct:key_index	file:
+tags:706:is_key_compare_to	indexes/cpp-btree/btree.h	/^  typedef btree_is_key_compare_to<key_compare> is_key_compare_to;$/;"	t	struct:btree::btree_common_params
+tags:707:is_key_compare_to	indexes/cpp-btree/btree.h	/^  typedef typename Params::is_key_compare_to is_key_compare_to;$/;"	t	class:btree::btree
+tags:710:iskey	indexes/rax.h	/^    uint32_t iskey:1;     \/* Does this node contain a key? *\/$/;"	m	struct:raxNode
+tags:749:key	indexes/art.c	/^   unsigned char key;$/;"	m	struct:key_index	file:
+tags:750:key	indexes/art.h	/^    unsigned char key[];$/;"	m	struct:__anon6
+tags:751:key	indexes/cpp-btree/btree.h	/^  const key_type& key() const {$/;"	f	struct:btree::btree_iterator
+tags:752:key	indexes/cpp-btree/btree.h	/^  const key_type& key(int i) const {$/;"	f	class:btree::btree_node
+tags:753:key	indexes/cpp-btree/btree.h	/^  static const Key& key(const mutable_value_type &x) { return x.first; }$/;"	f	struct:btree::btree_map_params
+tags:754:key	indexes/cpp-btree/btree.h	/^  static const Key& key(const value_type &x) { return x.first; }$/;"	f	struct:btree::btree_map_params
+tags:755:key	indexes/cpp-btree/btree.h	/^  static const Key& key(const value_type &x) { return x; }$/;"	f	struct:btree::btree_set_params
+tags:756:key	indexes/cpp-btree/btree_container.h	/^    const key_type &key;$/;"	m	struct:btree::btree_map_container::generate_value
+tags:757:key	indexes/rax.h	/^    unsigned char *key;     \/* The current string. *\/$/;"	m	struct:raxIterator
+tags:758:key	indexes/rbtree.h	/^    void* key;$/;"	m	struct:rbtree_node_t
+tags:759:key	indexes/uthash.h	/^   void *key;                        \/* ptr to enclosing struct's key  *\/$/;"	m	struct:UT_hash_handle
+tags:760:key_comp	indexes/cpp-btree/btree.h	/^  const key_compare& key_comp() const {$/;"	f	class:btree::btree
+tags:761:key_compare	indexes/cpp-btree/btree.h	/^    Compare, btree_key_compare_to_adapter<Compare> >::type key_compare;$/;"	t	struct:btree::btree_common_params
+tags:762:key_compare	indexes/cpp-btree/btree.h	/^  typedef typename Params::key_compare key_compare;$/;"	t	class:btree::btree
+tags:763:key_compare	indexes/cpp-btree/btree.h	/^  typedef typename Params::key_compare key_compare;$/;"	t	class:btree::btree_node
+tags:764:key_compare	indexes/cpp-btree/btree_container.h	/^  typedef typename Tree::key_compare key_compare;$/;"	t	class:btree::btree_container
+tags:765:key_compare	indexes/cpp-btree/btree_container.h	/^  typedef typename Tree::key_compare key_compare;$/;"	t	class:btree::btree_map_container
+tags:766:key_compare	indexes/cpp-btree/btree_container.h	/^  typedef typename Tree::key_compare key_compare;$/;"	t	class:btree::btree_multi_container
+tags:767:key_compare	indexes/cpp-btree/btree_container.h	/^  typedef typename Tree::key_compare key_compare;$/;"	t	class:btree::btree_unique_container
+tags:768:key_compare	indexes/cpp-btree/btree_map.h	/^  typedef typename btree_type::key_compare key_compare;$/;"	t	class:btree::btree_map
+tags:769:key_compare	indexes/cpp-btree/btree_map.h	/^  typedef typename btree_type::key_compare key_compare;$/;"	t	class:btree::btree_multimap
+tags:770:key_compare	indexes/cpp-btree/btree_set.h	/^  typedef typename btree_type::key_compare key_compare;$/;"	t	class:btree::btree_multiset
+tags:771:key_compare	indexes/cpp-btree/btree_set.h	/^  typedef typename btree_type::key_compare key_compare;$/;"	t	class:btree::btree_set
+tags:772:key_comparison_function_must_return_bool	indexes/cpp-btree/btree.h	/^      key_comparison_function_must_return_bool);$/;"	m	class:btree::btree
+tags:773:key_index	indexes/art.c	/^struct key_index {$/;"	s	file:
+tags:774:key_len	indexes/art.h	/^    uint32_t key_len;$/;"	m	struct:__anon6
+tags:775:key_len	indexes/rax.h	/^    size_t key_len;         \/* Current key length. *\/$/;"	m	struct:raxIterator
+tags:776:key_max	indexes/rax.h	/^    size_t key_max;         \/* Max key len the current key buffer can hold. *\/$/;"	m	struct:raxIterator
+tags:777:key_size	items.h	/^   size_t key_size;$/;"	m	struct:item_metadata
+tags:778:key_static_string	indexes/rax.h	/^    unsigned char key_static_string[RAX_ITER_STATIC_LEN];$/;"	m	struct:raxIterator
+tags:779:key_to_index	indexes/art.c	/^} key_to_index[256];$/;"	v	typeref:struct:key_index
+tags:780:key_type	indexes/cpp-btree/btree.h	/^  typedef Key key_type;$/;"	t	struct:btree::btree_common_params
+tags:781:key_type	indexes/cpp-btree/btree.h	/^  typedef typename Node::key_type key_type;$/;"	t	struct:btree::btree_iterator
+tags:782:key_type	indexes/cpp-btree/btree.h	/^  typedef typename Params::key_type key_type;$/;"	t	class:btree::btree
+tags:783:key_type	indexes/cpp-btree/btree.h	/^  typedef typename Params::key_type key_type;$/;"	t	class:btree::btree_node
+tags:784:key_type	indexes/cpp-btree/btree_container.h	/^  typedef typename Tree::key_type key_type;$/;"	t	class:btree::btree_container
+tags:785:key_type	indexes/cpp-btree/btree_container.h	/^  typedef typename Tree::key_type key_type;$/;"	t	class:btree::btree_map_container
+tags:786:key_type	indexes/cpp-btree/btree_container.h	/^  typedef typename Tree::key_type key_type;$/;"	t	class:btree::btree_multi_container
+tags:787:key_type	indexes/cpp-btree/btree_container.h	/^  typedef typename Tree::key_type key_type;$/;"	t	class:btree::btree_unique_container
+tags:788:keylen	indexes/uthash.h	/^   unsigned keylen;                  \/* enclosing struct's key len     *\/$/;"	m	struct:UT_hash_handle
+tags:789:keys	indexes/art.h	/^    unsigned char keys[16];$/;"	m	struct:__anon3
+tags:790:keys	indexes/art.h	/^    unsigned char keys[256];$/;"	m	struct:__anon4
+tags:791:keys	indexes/art.h	/^    unsigned char keys[4];$/;"	m	struct:__anon2
+tags:809:leaf_matches	indexes/art.c	/^static int leaf_matches(const art_leaf *n, const unsigned char *key, int key_len, int depth) {$/;"	f	file:
+tags:818:linear_search_compare_to_type	indexes/cpp-btree/btree.h	/^    key_type, self_type, key_compare> linear_search_compare_to_type;$/;"	t	class:btree::btree_node
+tags:820:linear_search_plain_compare_type	indexes/cpp-btree/btree.h	/^    key_type, self_type, key_compare> linear_search_plain_compare_type;$/;"	t	class:btree::btree_node
+tags:827:lookup_closest_node	indexes/rbtree.c	/^node lookup_closest_node(rbtree t, void* key, compare_func compare) {$/;"	f
+tags:828:lookup_node	indexes/rbtree.c	/^node lookup_node(rbtree t, void* key, compare_func compare) {$/;"	f
+tags:829:lower_bound	indexes/cpp-btree/btree.h	/^  const_iterator lower_bound(const key_type &key) const {$/;"	f	class:btree::btree
+tags:830:lower_bound	indexes/cpp-btree/btree.h	/^  int lower_bound(const key_type &k, const Compare &comp) const {$/;"	f	class:btree::btree_node
+tags:831:lower_bound	indexes/cpp-btree/btree.h	/^  iterator lower_bound(const key_type &key) {$/;"	f	class:btree::btree
+tags:836:lower_bound	indexes/cpp-btree/btree_container.h	/^  const_iterator lower_bound(const key_type &key) const {$/;"	f	class:btree::btree_container
+tags:837:lower_bound	indexes/cpp-btree/btree_container.h	/^  iterator lower_bound(const key_type &key) {$/;"	f	class:btree::btree_container
+tags:846:make_leaf	indexes/art.c	/^static art_leaf* make_leaf(const unsigned char *key, int key_len, void *value) {$/;"	f	file:
+tags:888:mutable_key_comp	indexes/cpp-btree/btree.h	/^  key_compare* mutable_key_comp() {$/;"	f	class:btree::btree
+tags:928:new_node	indexes/rbtree.c	/^node new_node(void* key, index_entry_t* value, color node_color, node left, node right) {$/;"	f
+tags:962:operator ()	indexes/cpp-btree/btree.h	/^  bool operator()(const Key &x, const Key &y) const {$/;"	f	struct:btree::btree_key_comparer
+tags:964:operator ()	indexes/cpp-btree/btree.h	/^  int operator()(const std::string &a, const std::string &b) const {$/;"	f	struct:btree::btree_key_compare_to_adapter
+tags:977:operator []	indexes/cpp-btree/btree_container.h	/^  data_type& operator[](const key_type &key) {$/;"	f	class:btree::btree_map_container
+tags:1018:prefix_mismatch	indexes/art.c	/^static int prefix_mismatch(const art_node *n, const unsigned char *key, int key_len, int depth) {$/;"	f	file:
+tags:1039:raxCompare	indexes/rax.c	/^int raxCompare(raxIterator *iter, const char *op, unsigned char *key, size_t key_len) {$/;"	f
+tags:1108:rbtree_delete	indexes/rbtree.c	/^void rbtree_delete(rbtree t, void* key, compare_func compare) {$/;"	f
+tags:1114:rbtree_insert	indexes/rbtree.c	/^void rbtree_insert(rbtree t, void* key, index_entry_t* value, compare_func compare) {$/;"	f
+tags:1115:rbtree_lookup	indexes/rbtree.c	/^index_entry_t* rbtree_lookup(rbtree t, void* key, compare_func compare) {$/;"	f
+tags:1116:rbtree_lookup_n	indexes/rbtree.c	/^struct rbtree_scan_tmp rbtree_lookup_n(rbtree t, void *key, size_t n, compare_func compare) {$/;"	f
+tags:1138:recursive_delete	indexes/art.c	/^static art_leaf* recursive_delete(art_node *n, art_node **ref, const unsigned char *key, int key_len, int depth) {$/;"	f	file:
+tags:1139:recursive_insert	indexes/art.c	/^static void* recursive_insert(art_node *n, art_node **ref, const unsigned char *key, int key_len, void *value, int depth, int *old) {$/;"	f	file:
+tags:1141:recursive_iter_ordered	indexes/art.c	/^static int recursive_iter_ordered(art_node *n, size_t depth, unsigned char *key, size_t len, art_callback cb, void *data, size_t scan_size) {$/;"	f	file:
+tags:1306:upper_bound	indexes/cpp-btree/btree.h	/^  const_iterator upper_bound(const key_type &key) const {$/;"	f	class:btree::btree
+tags:1307:upper_bound	indexes/cpp-btree/btree.h	/^  int upper_bound(const key_type &k, const Compare &comp) const {$/;"	f	class:btree::btree_node
+tags:1308:upper_bound	indexes/cpp-btree/btree.h	/^  iterator upper_bound(const key_type &key) {$/;"	f	class:btree::btree
+tags:1313:upper_bound	indexes/cpp-btree/btree_container.h	/^  const_iterator upper_bound(const key_type &key) const {$/;"	f	class:btree::btree_container
+tags:1314:upper_bound	indexes/cpp-btree/btree_container.h	/^  iterator upper_bound(const key_type &key) {$/;"	f	class:btree::btree_container
+indexes/btree.cc:58:   void btree_forall_keys(btree_t *t, void (*cb)(uint64_t h, void *data), void *data) {
+Binary file indexes/btree.o matches
+indexes/cpp-btree/btree_set.h:46:  typedef typename btree_type::key_compare key_compare;
+indexes/cpp-btree/btree_set.h:51:  btree_set(const key_compare &comp = key_compare(),
+indexes/cpp-btree/btree_set.h:64:            const key_compare &comp = key_compare(),
+indexes/cpp-btree/btree_set.h:89:  typedef typename btree_type::key_compare key_compare;
+indexes/cpp-btree/btree_set.h:94:  btree_multiset(const key_compare &comp = key_compare(),
+indexes/cpp-btree/btree_set.h:107:                 const key_compare &comp = key_compare(),
+indexes/cpp-btree/btree_container.h:33:  typedef typename Tree::key_type key_type;
+indexes/cpp-btree/btree_container.h:35:  typedef typename Tree::key_compare key_compare;
+indexes/cpp-btree/btree_container.h:50:  btree_container(const key_compare &comp, const allocator_type &alloc)
+indexes/cpp-btree/btree_container.h:70:  iterator lower_bound(const key_type &key) {
+indexes/cpp-btree/btree_container.h:71:    return tree_.lower_bound(key);
+indexes/cpp-btree/btree_container.h:73:  const_iterator lower_bound(const key_type &key) const {
+indexes/cpp-btree/btree_container.h:74:    return tree_.lower_bound(key);
+indexes/cpp-btree/btree_container.h:76:  iterator upper_bound(const key_type &key) {
+indexes/cpp-btree/btree_container.h:77:    return tree_.upper_bound(key);
+indexes/cpp-btree/btree_container.h:79:  const_iterator upper_bound(const key_type &key) const {
+indexes/cpp-btree/btree_container.h:80:    return tree_.upper_bound(key);
+indexes/cpp-btree/btree_container.h:82:  std::pair<iterator,iterator> equal_range(const key_type &key) {
+indexes/cpp-btree/btree_container.h:83:    return tree_.equal_range(key);
+indexes/cpp-btree/btree_container.h:85:  std::pair<const_iterator,const_iterator> equal_range(const key_type &key) const {
+indexes/cpp-btree/btree_container.h:86:    return tree_.equal_range(key);
+indexes/cpp-btree/btree_container.h:152:  typedef typename Tree::key_type key_type;
+indexes/cpp-btree/btree_container.h:155:  typedef typename Tree::key_compare key_compare;
+indexes/cpp-btree/btree_container.h:162:  btree_unique_container(const key_compare &comp = key_compare(),
+indexes/cpp-btree/btree_container.h:175:                         const key_compare &comp = key_compare(),
+indexes/cpp-btree/btree_container.h:182:  iterator find(const key_type &key) {
+indexes/cpp-btree/btree_container.h:183:    return this->tree_.find_unique(key);
+indexes/cpp-btree/btree_container.h:185:  const_iterator find(const key_type &key) const {
+indexes/cpp-btree/btree_container.h:186:    return this->tree_.find_unique(key);
+indexes/cpp-btree/btree_container.h:188:  size_type count(const key_type &key) const {
+indexes/cpp-btree/btree_container.h:189:    return this->tree_.count_unique(key);
+indexes/cpp-btree/btree_container.h:191:  iterator find_closest(const key_type &key) {
+indexes/cpp-btree/btree_container.h:192:    return this->tree_.find_closest(key);
+indexes/cpp-btree/btree_container.h:208:  int erase(const key_type &key) {
+indexes/cpp-btree/btree_container.h:209:    return this->tree_.erase_unique(key);
+indexes/cpp-btree/btree_container.h:229:  typedef typename Tree::key_type key_type;
+indexes/cpp-btree/btree_container.h:233:  typedef typename Tree::key_compare key_compare;
+indexes/cpp-btree/btree_container.h:239:  // if the key already exists in the map.
+indexes/cpp-btree/btree_container.h:241:    generate_value(const key_type &k)
+indexes/cpp-btree/btree_container.h:242:        : key(k) {
+indexes/cpp-btree/btree_container.h:245:      return std::make_pair(key, data_type());
+indexes/cpp-btree/btree_container.h:247:    const key_type &key;
+indexes/cpp-btree/btree_container.h:252:  btree_map_container(const key_compare &comp = key_compare(),
+indexes/cpp-btree/btree_container.h:265:                      const key_compare &comp = key_compare(),
+indexes/cpp-btree/btree_container.h:271:  data_type& operator[](const key_type &key) {
+indexes/cpp-btree/btree_container.h:272:    return this->tree_.insert_unique(key, generate_value(key)).first->second;
+indexes/cpp-btree/btree_container.h:283:  typedef typename Tree::key_type key_type;
+indexes/cpp-btree/btree_container.h:286:  typedef typename Tree::key_compare key_compare;
+indexes/cpp-btree/btree_container.h:293:  btree_multi_container(const key_compare &comp = key_compare(),
+indexes/cpp-btree/btree_container.h:306:                        const key_compare &comp = key_compare(),
+indexes/cpp-btree/btree_container.h:313:  iterator find(const key_type &key) {
+indexes/cpp-btree/btree_container.h:314:    return this->tree_.find_multi(key);
+indexes/cpp-btree/btree_container.h:316:  const_iterator find(const key_type &key) const {
+indexes/cpp-btree/btree_container.h:317:    return this->tree_.find_multi(key);
+indexes/cpp-btree/btree_container.h:319:  size_type count(const key_type &key) const {
+indexes/cpp-btree/btree_container.h:320:    return this->tree_.count_multi(key);
+indexes/cpp-btree/btree_container.h:336:  int erase(const key_type &key) {
+indexes/cpp-btree/btree_container.h:337:    return this->tree_.erase_multi(key);
+indexes/cpp-btree/btree_map.h:51:  typedef typename btree_type::key_compare key_compare;
+indexes/cpp-btree/btree_map.h:56:  btree_map(const key_compare &comp = key_compare(),
+indexes/cpp-btree/btree_map.h:69:            const key_compare &comp = key_compare(),
+indexes/cpp-btree/btree_map.h:96:  typedef typename btree_type::key_compare key_compare;
+indexes/cpp-btree/btree_map.h:103:  btree_multimap(const key_compare &comp = key_compare(),
+indexes/cpp-btree/btree_map.h:116:                 const key_compare &comp = key_compare(),
+indexes/cpp-btree/btree.h:163:// A helper type used to indicate that a key-compare-to functor has been
+indexes/cpp-btree/btree.h:164:// provided. A user can specify a key-compare-to functor by doing:
+indexes/cpp-btree/btree.h:167://      : public util::btree::btree_key_compare_to_tag {
+indexes/cpp-btree/btree.h:175:struct btree_key_compare_to_tag {
+indexes/cpp-btree/btree.h:179:// btree_key_compare_to_tag.
+indexes/cpp-btree/btree.h:181:struct btree_is_key_compare_to
+indexes/cpp-btree/btree.h:182:    : public std::is_convertible<Compare, btree_key_compare_to_tag> {
+indexes/cpp-btree/btree.h:189:// less<string> and greater<string>. The btree_key_compare_to_adapter
+indexes/cpp-btree/btree.h:194:struct btree_key_compare_to_adapter : Compare {
+indexes/cpp-btree/btree.h:195:  btree_key_compare_to_adapter() { }
+indexes/cpp-btree/btree.h:196:  btree_key_compare_to_adapter(const Compare &c) : Compare(c) { }
+indexes/cpp-btree/btree.h:197:  btree_key_compare_to_adapter(const btree_key_compare_to_adapter<Compare> &c)
+indexes/cpp-btree/btree.h:203:struct btree_key_compare_to_adapter<std::less<std::string> >
+indexes/cpp-btree/btree.h:204:    : public btree_key_compare_to_tag {
+indexes/cpp-btree/btree.h:205:  btree_key_compare_to_adapter() {}
+indexes/cpp-btree/btree.h:206:  btree_key_compare_to_adapter(const std::less<std::string>&) {}
+indexes/cpp-btree/btree.h:207:  btree_key_compare_to_adapter(
+indexes/cpp-btree/btree.h:208:      const btree_key_compare_to_adapter<std::less<std::string> >&) {}
+indexes/cpp-btree/btree.h:215:struct btree_key_compare_to_adapter<std::greater<std::string> >
+indexes/cpp-btree/btree.h:216:    : public btree_key_compare_to_tag {
+indexes/cpp-btree/btree.h:217:  btree_key_compare_to_adapter() {}
+indexes/cpp-btree/btree.h:218:  btree_key_compare_to_adapter(const std::greater<std::string>&) {}
+indexes/cpp-btree/btree.h:219:  btree_key_compare_to_adapter(
+indexes/cpp-btree/btree.h:220:      const btree_key_compare_to_adapter<std::greater<std::string> >&) {}
+indexes/cpp-btree/btree.h:230:struct btree_key_comparer {
+indexes/cpp-btree/btree.h:231:  btree_key_comparer() {}
+indexes/cpp-btree/btree.h:232:  btree_key_comparer(Compare c) : comp(c) {}
+indexes/cpp-btree/btree.h:242:// A specialization of btree_key_comparer when a compare-to functor is
+indexes/cpp-btree/btree.h:246:struct btree_key_comparer<Key, Compare, true> {
+indexes/cpp-btree/btree.h:247:  btree_key_comparer() {}
+indexes/cpp-btree/btree.h:248:  btree_key_comparer(Compare c) : comp(c) {}
+indexes/cpp-btree/btree.h:258:// A helper function to compare to keys using the specified compare
+indexes/cpp-btree/btree.h:259:// functor. This dispatches to the appropriate btree_key_comparer comparison,
+indexes/cpp-btree/btree.h:261:// whether Compare is derived from btree_key_compare_to_tag).
+indexes/cpp-btree/btree.h:263:static bool btree_compare_keys(
+indexes/cpp-btree/btree.h:265:  typedef btree_key_comparer<Key, Compare,
+indexes/cpp-btree/btree.h:266:      btree_is_key_compare_to<Compare>::value> key_comparer;
+indexes/cpp-btree/btree.h:267:  return key_comparer::bool_compare(comp, x, y);
+indexes/cpp-btree/btree.h:273:  // If Compare is derived from btree_key_compare_to_tag then use it as the
+indexes/cpp-btree/btree.h:274:  // key_compare type. Otherwise, use btree_key_compare_to_adapter<> which will
+indexes/cpp-btree/btree.h:277:    btree_is_key_compare_to<Compare>::value,
+indexes/cpp-btree/btree.h:278:    Compare, btree_key_compare_to_adapter<Compare> >::type key_compare;
+indexes/cpp-btree/btree.h:279:  // A type which indicates if we have a key-compare-to functor or a plain old
+indexes/cpp-btree/btree.h:280:  // key-compare functor.
+indexes/cpp-btree/btree.h:281:  typedef btree_is_key_compare_to<key_compare> is_key_compare_to;
+indexes/cpp-btree/btree.h:284:  typedef Key key_type;
+indexes/cpp-btree/btree.h:323:  static const Key& key(const value_type &x) { return x.first; }
+indexes/cpp-btree/btree.h:324:  static const Key& key(const mutable_value_type &x) { return x.first; }
+indexes/cpp-btree/btree.h:349:  static const Key& key(const value_type &x) { return x; }
+indexes/cpp-btree/btree.h:393:        btree_key_comparer<K, CompareTo, true> > upper_compare;
+indexes/cpp-btree/btree.h:418:        btree_key_comparer<K, CompareTo, true> > upper_compare;
+indexes/cpp-btree/btree.h:431:  typedef typename Params::key_type key_type;
+indexes/cpp-btree/btree.h:439:  typedef typename Params::key_compare key_compare;
+indexes/cpp-btree/btree.h:444:    key_type, self_type, key_compare> linear_search_plain_compare_type;
+indexes/cpp-btree/btree.h:446:    key_type, self_type, key_compare> linear_search_compare_to_type;
+indexes/cpp-btree/btree.h:448:    key_type, self_type, key_compare> binary_search_plain_compare_type;
+indexes/cpp-btree/btree.h:450:    key_type, self_type, key_compare> binary_search_compare_to_type;
+indexes/cpp-btree/btree.h:451:  // If we have a valid key-compare-to type, use linear_search_compare_to,
+indexes/cpp-btree/btree.h:454:    Params::is_key_compare_to::value,
+indexes/cpp-btree/btree.h:457:  // If we have a valid key-compare-to type, use binary_search_compare_to,
+indexes/cpp-btree/btree.h:460:    Params::is_key_compare_to::value,
+indexes/cpp-btree/btree.h:463:  // If the key is an integral or floating point type, use linear search which
+indexes/cpp-btree/btree.h:467:    std::is_integral<key_type>::value ||
+indexes/cpp-btree/btree.h:468:    std::is_floating_point<key_type>::value,
+indexes/cpp-btree/btree.h:508:    // The array of child pointers. The keys in children_[i] are all less than
+indexes/cpp-btree/btree.h:509:    // key(i). The keys in children_[i + 1] are all greater than key(i). There
+indexes/cpp-btree/btree.h:552:  // Getters for the key/value at position i in the node.
+indexes/cpp-btree/btree.h:553:  const key_type& key(int i) const {
+indexes/cpp-btree/btree.h:554:    return params_type::key(fields_.values[i]);
+indexes/cpp-btree/btree.h:580:  // Returns the position of the first value whose key is not less than k.
+indexes/cpp-btree/btree.h:582:  int lower_bound(const key_type &k, const Compare &comp) const {
+indexes/cpp-btree/btree.h:585:  // Returns the position of the first value whose key is greater than k.
+indexes/cpp-btree/btree.h:587:  int upper_bound(const key_type &k, const Compare &comp) const {
+indexes/cpp-btree/btree.h:591:  // Returns the position of the first value whose key is not less than k using
+indexes/cpp-btree/btree.h:595:      const key_type &k, int s, int e, const Compare &comp) const {
+indexes/cpp-btree/btree.h:597:      if (!btree_compare_keys(comp, key(s), k)) {
+indexes/cpp-btree/btree.h:605:  // Returns the position of the first value whose key is not less than k using
+indexes/cpp-btree/btree.h:609:      const key_type &k, int s, int e, const Compare &comp) const {
+indexes/cpp-btree/btree.h:611:      int c = comp(key(s), k);
+indexes/cpp-btree/btree.h:622:  // Returns the position of the first value whose key is not less than k using
+indexes/cpp-btree/btree.h:626:      const key_type &k, int s, int e, const Compare &comp) const {
+indexes/cpp-btree/btree.h:629:      if (btree_compare_keys(comp, key(mid), k)) {
+indexes/cpp-btree/btree.h:638:  // Returns the position of the first value whose key is not less than k using
+indexes/cpp-btree/btree.h:642:      const key_type &k, int s, int e, const CompareTo &comp) const {
+indexes/cpp-btree/btree.h:645:      int c = comp(key(mid), k);
+indexes/cpp-btree/btree.h:651:        // Need to return the first value whose key is not less than k, which
+indexes/cpp-btree/btree.h:653:        // that the result is an exact match because if "key(mid-1) < k" the
+indexes/cpp-btree/btree.h:678:  // delimiting key in the parent node onto itself.
+indexes/cpp-btree/btree.h:739:  typedef typename Node::key_type key_type;
+indexes/cpp-btree/btree.h:801:  // Accessors for the key/value the iterator is pointing at.
+indexes/cpp-btree/btree.h:802:  const key_type& key() const {
+indexes/cpp-btree/btree.h:803:    return node->key(position);
+indexes/cpp-btree/btree.h:854:class btree : public Params::key_compare {
+indexes/cpp-btree/btree.h:861:  typedef typename Params::is_key_compare_to is_key_compare_to;
+indexes/cpp-btree/btree.h:866:    is_key_compare_to::value,
+indexes/cpp-btree/btree.h:911:  typedef typename Params::key_type key_type;
+indexes/cpp-btree/btree.h:915:  typedef typename Params::key_compare key_compare;
+indexes/cpp-btree/btree.h:933:  btree(const key_compare &comp, const allocator_type &alloc);
+indexes/cpp-btree/btree.h:969:  // Finds the first element whose key is not less than key.
+indexes/cpp-btree/btree.h:970:  iterator lower_bound(const key_type &key) {
+indexes/cpp-btree/btree.h:972:        internal_lower_bound(key, iterator(root(), 0)));
+indexes/cpp-btree/btree.h:974:  const_iterator lower_bound(const key_type &key) const {
+indexes/cpp-btree/btree.h:976:        internal_lower_bound(key, const_iterator(root(), 0)));
+indexes/cpp-btree/btree.h:979:  // Finds the first element whose key is greater than key.
+indexes/cpp-btree/btree.h:980:  iterator upper_bound(const key_type &key) {
+indexes/cpp-btree/btree.h:982:        internal_upper_bound(key, iterator(root(), 0)));
+indexes/cpp-btree/btree.h:984:  const_iterator upper_bound(const key_type &key) const {
+indexes/cpp-btree/btree.h:986:        internal_upper_bound(key, const_iterator(root(), 0)));
+indexes/cpp-btree/btree.h:989:  // Finds the range of values which compare equal to key. The first member of
+indexes/cpp-btree/btree.h:990:  // the returned pair is equal to lower_bound(key). The second member pair of
+indexes/cpp-btree/btree.h:991:  // the pair is equal to upper_bound(key).
+indexes/cpp-btree/btree.h:992:  std::pair<iterator,iterator> equal_range(const key_type &key) {
+indexes/cpp-btree/btree.h:993:    return std::make_pair(lower_bound(key), upper_bound(key));
+indexes/cpp-btree/btree.h:995:  std::pair<const_iterator,const_iterator> equal_range(const key_type &key) const {
+indexes/cpp-btree/btree.h:996:    return std::make_pair(lower_bound(key), upper_bound(key));
+indexes/cpp-btree/btree.h:1001:  // ValuePointer type is used to avoid instatiating the value unless the key
+indexes/cpp-btree/btree.h:1002:  // is being inserted. Value is not dereferenced if the key already exists in
+indexes/cpp-btree/btree.h:1005:  std::pair<iterator,bool> insert_unique(const key_type &key, ValuePointer value);
+indexes/cpp-btree/btree.h:1010:    return insert_unique(params_type::key(v), &v);
+indexes/cpp-btree/btree.h:1024:  // instatiating the value unless the key is being inserted. Value is not
+indexes/cpp-btree/btree.h:1025:  // dereferenced if the key already exists in the btree. See
+indexes/cpp-btree/btree.h:1028:  iterator insert_multi(const key_type &key, ValuePointer value);
+indexes/cpp-btree/btree.h:1032:    return insert_multi(params_type::key(v), &v);
+indexes/cpp-btree/btree.h:1052:  // Erases range. Returns the number of keys erased.
+indexes/cpp-btree/btree.h:1055:  // Erases the specified key from the btree. Returns 1 if an element was
+indexes/cpp-btree/btree.h:1057:  int erase_unique(const key_type &key);
+indexes/cpp-btree/btree.h:1059:  // Erases all of the entries matching the specified key from the
+indexes/cpp-btree/btree.h:1061:  int erase_multi(const key_type &key);
+indexes/cpp-btree/btree.h:1063:  // Finds the iterator corresponding to a key or returns end() if the key is
+indexes/cpp-btree/btree.h:1065:  iterator find_unique(const key_type &key) {
+indexes/cpp-btree/btree.h:1067:        internal_find_unique(key, iterator(root(), 0)));
+indexes/cpp-btree/btree.h:1069:  const_iterator find_unique(const key_type &key) const {
+indexes/cpp-btree/btree.h:1071:        internal_find_unique(key, const_iterator(root(), 0)));
+indexes/cpp-btree/btree.h:1073:  iterator find_multi(const key_type &key) {
+indexes/cpp-btree/btree.h:1075:        internal_find_multi(key, iterator(root(), 0)));
+indexes/cpp-btree/btree.h:1077:  const_iterator find_multi(const key_type &key) const {
+indexes/cpp-btree/btree.h:1079:        internal_find_multi(key, const_iterator(root(), 0)));
+indexes/cpp-btree/btree.h:1082:  iterator find_closest(const key_type &key) {
+indexes/cpp-btree/btree.h:1084:        internal_find_closest(key, iterator(root(), 0)));
+indexes/cpp-btree/btree.h:1087:  // Returns a count of the number of times the key appears in the btree.
+indexes/cpp-btree/btree.h:1088:  size_type count_unique(const key_type &key) const {
+indexes/cpp-btree/btree.h:1090:        key, const_iterator(root(), 0));
+indexes/cpp-btree/btree.h:1092:      // The key doesn't exist in the tree.
+indexes/cpp-btree/btree.h:1097:  // Returns a count of the number of times the key appears in the btree.
+indexes/cpp-btree/btree.h:1098:  size_type count_multi(const key_type &key) const {
+indexes/cpp-btree/btree.h:1099:    return distance(lower_bound(key), upper_bound(key));
+indexes/cpp-btree/btree.h:1118:  key_compare* mutable_key_comp() {
+indexes/cpp-btree/btree.h:1121:  const key_compare& key_comp() const {
+indexes/cpp-btree/btree.h:1124:  bool compare_keys(const key_type &x, const key_type &y) const {
+indexes/cpp-btree/btree.h:1125:    return btree_compare_keys(key_comp(), x, y);
+indexes/cpp-btree/btree.h:1289:  // Merges the values of left, right and the delimiting key on their parent
+indexes/cpp-btree/btree.h:1290:  // onto left, removing the delimiting key and deleting right.
+indexes/cpp-btree/btree.h:1310:  // key(v) <= iter.key() and (--iter).key() <= key(v).
+indexes/cpp-btree/btree.h:1320:  // Returns an iterator pointing to the leaf position at which key would
+indexes/cpp-btree/btree.h:1324:  // the key-compare-to specialization and returns either kExactMatch (if the
+indexes/cpp-btree/btree.h:1325:  // key was found in the tree) or -kExactMatch (if it wasn't) in the second
+indexes/cpp-btree/btree.h:1328:  // speeding up string keys.
+indexes/cpp-btree/btree.h:1331:      const key_type &key, IterType iter) const;
+indexes/cpp-btree/btree.h:1334:      const key_type &key, IterType iter) const;
+indexes/cpp-btree/btree.h:1337:      const key_type &key, IterType iter) const;
+indexes/cpp-btree/btree.h:1342:      const key_type &key, IterType iter) const;
+indexes/cpp-btree/btree.h:1347:      const key_type &key, IterType iter) const;
+indexes/cpp-btree/btree.h:1352:      const key_type &key, IterType iter) const;
+indexes/cpp-btree/btree.h:1356:      const key_type &key, IterType iter) const;
+indexes/cpp-btree/btree.h:1361:      const key_type &key, IterType iter) const;
+indexes/cpp-btree/btree.h:1371:                      const key_type *lo, const key_type *hi) const;
+indexes/cpp-btree/btree.h:1392:  // key-compare-to functor or if R is bool and small_ otherwise.
+indexes/cpp-btree/btree.h:1395:   if_<is_key_compare_to::value,
+indexes/cpp-btree/btree.h:1398:   big_, small_>::type key_compare_checker(R);
+indexes/cpp-btree/btree.h:1400:  // A never instantiated helper function that returns the key comparison
+indexes/cpp-btree/btree.h:1402:  static key_compare key_compare_helper();
+indexes/cpp-btree/btree.h:1404:  // Verify that key_compare returns a bool. This is similar to the way
+indexes/cpp-btree/btree.h:1405:  // is_convertible in base/type_traits.h works. Note that key_compare_checker
+indexes/cpp-btree/btree.h:1407:  // key_compare_checker() to instantiate and then figure out the size of the
+indexes/cpp-btree/btree.h:1408:  // return type of key_compare_checker() at compile time which we then check
+indexes/cpp-btree/btree.h:1411:      sizeof(key_compare_checker(key_compare_helper()(key_type(), key_type()))) ==
+indexes/cpp-btree/btree.h:1413:      key_comparison_function_must_return_bool);
+indexes/cpp-btree/btree.h:1582:  // The split key is the largest value in the left sibling.
+indexes/cpp-btree/btree.h:1737:btree<P>::btree(const key_compare &comp, const allocator_type &alloc)
+indexes/cpp-btree/btree.h:1738:    : key_compare(comp),
+indexes/cpp-btree/btree.h:1744:    : key_compare(x.key_comp()),
+indexes/cpp-btree/btree.h:1751:btree<P>::insert_unique(const key_type &key, ValuePointer value) {
+indexes/cpp-btree/btree.h:1756:  std::pair<iterator, int> res = internal_locate(key, iterator(root(), 0));
+indexes/cpp-btree/btree.h:1759:    // The key already exists in the tree, do nothing.
+indexes/cpp-btree/btree.h:1763:    if (last.node && !compare_keys(key, last.key())) {
+indexes/cpp-btree/btree.h:1764:      // The key already exists in the tree, do nothing.
+indexes/cpp-btree/btree.h:1776:    const key_type &key = params_type::key(v);
+indexes/cpp-btree/btree.h:1777:    if (position == end() || compare_keys(key, position.key())) {
+indexes/cpp-btree/btree.h:1779:      if (position == begin() || compare_keys((--prev).key(), key)) {
+indexes/cpp-btree/btree.h:1780:        // prev.key() < key < position.key()
+indexes/cpp-btree/btree.h:1783:    } else if (compare_keys(position.key(), key)) {
+indexes/cpp-btree/btree.h:1786:      if (next == end() || compare_keys(key, next.key())) {
+indexes/cpp-btree/btree.h:1787:        // position.key() < key < next.key()
+indexes/cpp-btree/btree.h:1791:      // position.key() == key
+indexes/cpp-btree/btree.h:1807:btree<P>::insert_multi(const key_type &key, ValuePointer value) {
+indexes/cpp-btree/btree.h:1812:  iterator iter = internal_upper_bound(key, iterator(root(), 0));
+indexes/cpp-btree/btree.h:1823:    const key_type &key = params_type::key(v);
+indexes/cpp-btree/btree.h:1824:    if (position == end() || !compare_keys(position.key(), key)) {
+indexes/cpp-btree/btree.h:1826:      if (position == begin() || !compare_keys(key, (--prev).key())) {
+indexes/cpp-btree/btree.h:1827:        // prev.key() <= key <= position.key()
+indexes/cpp-btree/btree.h:1833:      if (next == end() || !compare_keys(next.key(), key)) {
+indexes/cpp-btree/btree.h:1834:        // position.key() < key <= next.key()
+indexes/cpp-btree/btree.h:1853:  *mutable_key_comp() = x.key_comp();
+indexes/cpp-btree/btree.h:1856:  // Assignment can avoid key comparisons because we know the order of the
+indexes/cpp-btree/btree.h:1873:    // Deletion of a value on an internal node. Swap the key with the largest
+indexes/cpp-btree/btree.h:1877:    assert(!compare_keys(tmp_iter.key(), iter.key()));
+indexes/cpp-btree/btree.h:1885:  // Delete the key from the leaf.
+indexes/cpp-btree/btree.h:1941:int btree<P>::erase_unique(const key_type &key) {
+indexes/cpp-btree/btree.h:1942:  iterator iter = internal_find_unique(key, iterator(root(), 0));
+indexes/cpp-btree/btree.h:1944:    // The key doesn't exist in the tree, return nothing done.
+indexes/cpp-btree/btree.h:1952:int btree<P>::erase_multi(const key_type &key) {
+indexes/cpp-btree/btree.h:1953:  iterator begin = internal_lower_bound(key, iterator(root(), 0));
+indexes/cpp-btree/btree.h:1955:    // The key doesn't exist in the tree, return nothing done.
+indexes/cpp-btree/btree.h:1958:  // Delete all of the keys between begin and upper_bound(key).
+indexes/cpp-btree/btree.h:1960:      internal_upper_bound(key, iterator(root(), 0)));
+indexes/cpp-btree/btree.h:1974:  std::swap(static_cast<key_compare&>(*this), static_cast<key_compare&>(x));
+indexes/cpp-btree/btree.h:2239:    const key_type &key, IterType iter) const {
+indexes/cpp-btree/btree.h:2240:  return internal_locate_type::dispatch(key, *this, iter);
+indexes/cpp-btree/btree.h:2245:    const key_type &key, IterType iter) const {
+indexes/cpp-btree/btree.h:2247:    iter.position = iter.node->lower_bound(key, key_comp());
+indexes/cpp-btree/btree.h:2258:    const key_type &key, IterType iter) const {
+indexes/cpp-btree/btree.h:2260:    int res = iter.node->lower_bound(key, key_comp());
+indexes/cpp-btree/btree.h:2275:    const key_type &key, IterType iter) const {
+indexes/cpp-btree/btree.h:2279:          iter.node->lower_bound(key, key_comp()) & kMatchMask;
+indexes/cpp-btree/btree.h:2292:    const key_type &key, IterType iter) const {
+indexes/cpp-btree/btree.h:2295:      iter.position = iter.node->upper_bound(key, key_comp());
+indexes/cpp-btree/btree.h:2308:    const key_type &key, IterType iter) const {
+indexes/cpp-btree/btree.h:2310:    std::pair<IterType, int> res = internal_locate(key, iter);
+indexes/cpp-btree/btree.h:2316:      if (iter.node && !compare_keys(key, iter.key())) {
+indexes/cpp-btree/btree.h:2326:    const key_type &key, IterType iter) const {
+indexes/cpp-btree/btree.h:2328:    std::pair<IterType, int> res = internal_locate(key, iter);
+indexes/cpp-btree/btree.h:2344:    const key_type &key, IterType iter) const {
+indexes/cpp-btree/btree.h:2346:    iter = internal_lower_bound(key, iter);
+indexes/cpp-btree/btree.h:2349:      if (iter.node && !compare_keys(key, iter.key())) {
+indexes/cpp-btree/btree.h:2383:    os << node->key(i) << " [" << level << "]\n";
+indexes/cpp-btree/btree.h:2392:    const node_type *node, const key_type *lo, const key_type *hi) const {
+indexes/cpp-btree/btree.h:2396:    assert(!compare_keys(node->key(0), *lo));
+indexes/cpp-btree/btree.h:2399:    assert(!compare_keys(*hi, node->key(node->count() - 1)));
+indexes/cpp-btree/btree.h:2402:    assert(!compare_keys(node->key(i), node->key(i - 1)));
+indexes/cpp-btree/btree.h:2412:          (i == 0) ? lo : &node->key(i - 1),
+indexes/cpp-btree/btree.h:2413:          (i == node->count()) ? hi : &node->key(i));
+Binary file indexes/art.o matches
+indexes/rbtree.c:51:static node new_node(void* key, index_entry_t* value, color node_color, node left, node right);
+indexes/rbtree.c:52:static node lookup_node(rbtree t, void* key, compare_func compare);
+indexes/rbtree.c:172:node new_node(void* key, index_entry_t* value, color node_color, node left, node right) {
+indexes/rbtree.c:174:   result->key = key;
+indexes/rbtree.c:185:node lookup_node(rbtree t, void* key, compare_func compare) {
+indexes/rbtree.c:188:      int comp_result = compare(key, n->key);
+indexes/rbtree.c:202:node lookup_closest_node(rbtree t, void* key, compare_func compare) {
+indexes/rbtree.c:206:      int comp_result = compare(key, n->key);
+indexes/rbtree.c:221:index_entry_t* rbtree_lookup(rbtree t, void* key, compare_func compare) {
+indexes/rbtree.c:222:   node n = lookup_node(t, key, compare);
+indexes/rbtree.c:262:void rbtree_insert(rbtree t, void* key, index_entry_t* value, compare_func compare) {
+indexes/rbtree.c:263:   node inserted_node = new_node(key, value, RED, NULL, NULL);
+indexes/rbtree.c:265:   if (t->last_visited_node && compare(key, t->last_visited_node->key) == 0) {
+indexes/rbtree.c:275:         int comp_result = compare(key, n->key);
+indexes/rbtree.c:353:void rbtree_delete(rbtree t, void* key, compare_func compare) {
+indexes/rbtree.c:355:   node n = lookup_node(t, key, compare);
+indexes/rbtree.c:359:      /* Copy key/value from predecessor and then delete it instead */
+indexes/rbtree.c:361:      n->key   = pred->key;
+indexes/rbtree.c:477:   show(n->key, &n->value);
+indexes/rbtree.c:514:struct rbtree_scan_tmp rbtree_lookup_n(rbtree t, void *key, size_t n, compare_func compare) {
+indexes/rbtree.c:519:   node start = lookup_closest_node(t, key, compare);
+indexes/btree.h:17:void btree_forall_keys(btree_t *t, void (*cb)(uint64_t h, void *data), void *data);
+indexes/uthash.h:159:#define HASH_VALUE(keyptr,keylen,hashv)                                          \
+indexes/uthash.h:161:  HASH_FCN(keyptr, keylen, hashv);                                               \
+indexes/uthash.h:164:#define HASH_FIND_BYHASHVALUE(hh,head,keyptr,keylen,hashval,out)                 \
+indexes/uthash.h:171:      HASH_FIND_IN_BKT((head)->hh.tbl, hh, (head)->hh.tbl->buckets[ _hf_bkt ], keyptr, keylen, hashval, out); \
+indexes/uthash.h:176:#define HASH_FIND(hh,head,keyptr,keylen,out)                                     \
+indexes/uthash.h:179:  HASH_VALUE(keyptr, keylen, _hf_hashv);                                         \
+indexes/uthash.h:180:  HASH_FIND_BYHASHVALUE(hh, head, keyptr, keylen, _hf_hashv, out);               \
+indexes/uthash.h:252:#define HASH_REPLACE_BYHASHVALUE_INORDER(hh,head,fieldname,keylen_in,hashval,add,replaced,cmpfcn) \
+indexes/uthash.h:255:  HASH_FIND_BYHASHVALUE(hh, head, &((add)->fieldname), keylen_in, hashval, replaced); \
+indexes/uthash.h:259:  HASH_ADD_KEYPTR_BYHASHVALUE_INORDER(hh, head, &((add)->fieldname), keylen_in, hashval, add, cmpfcn); \
+indexes/uthash.h:262:#define HASH_REPLACE_BYHASHVALUE(hh,head,fieldname,keylen_in,hashval,add,replaced) \
+indexes/uthash.h:265:  HASH_FIND_BYHASHVALUE(hh, head, &((add)->fieldname), keylen_in, hashval, replaced); \
+indexes/uthash.h:269:  HASH_ADD_KEYPTR_BYHASHVALUE(hh, head, &((add)->fieldname), keylen_in, hashval, add); \
+indexes/uthash.h:272:#define HASH_REPLACE(hh,head,fieldname,keylen_in,add,replaced)                   \
+indexes/uthash.h:275:  HASH_VALUE(&((add)->fieldname), keylen_in, _hr_hashv);                         \
+indexes/uthash.h:276:  HASH_REPLACE_BYHASHVALUE(hh, head, fieldname, keylen_in, _hr_hashv, add, replaced); \
+indexes/uthash.h:279:#define HASH_REPLACE_INORDER(hh,head,fieldname,keylen_in,add,replaced,cmpfcn)    \
+indexes/uthash.h:282:  HASH_VALUE(&((add)->fieldname), keylen_in, _hr_hashv);                         \
+indexes/uthash.h:283:  HASH_REPLACE_BYHASHVALUE_INORDER(hh, head, fieldname, keylen_in, _hr_hashv, add, replaced, cmpfcn); \
+indexes/uthash.h:321:#define HASH_ADD_TO_TABLE(hh,head,keyptr,keylen_in,hashval,add,oomed)            \
+indexes/uthash.h:335:      HASH_EMIT_KEY(hh, head, keyptr, keylen_in);                                \
+indexes/uthash.h:345:#define HASH_ADD_TO_TABLE(hh,head,keyptr,keylen_in,hashval,add,oomed)            \
+indexes/uthash.h:352:  HASH_EMIT_KEY(hh, head, keyptr, keylen_in);                                    \
+indexes/uthash.h:358:#define HASH_ADD_KEYPTR_BYHASHVALUE_INORDER(hh,head,keyptr,keylen_in,hashval,add,cmpfcn) \
+indexes/uthash.h:362:  (add)->hh.key = (char*) (keyptr);                                              \
+indexes/uthash.h:363:  (add)->hh.keylen = (unsigned) (keylen_in);                                     \
+indexes/uthash.h:387:  HASH_ADD_TO_TABLE(hh, head, keyptr, keylen_in, hashval, add, _ha_oomed);       \
+indexes/uthash.h:391:#define HASH_ADD_KEYPTR_INORDER(hh,head,keyptr,keylen_in,add,cmpfcn)             \
+indexes/uthash.h:394:  HASH_VALUE(keyptr, keylen_in, _hs_hashv);                                      \
+indexes/uthash.h:395:  HASH_ADD_KEYPTR_BYHASHVALUE_INORDER(hh, head, keyptr, keylen_in, _hs_hashv, add, cmpfcn); \
+indexes/uthash.h:398:#define HASH_ADD_BYHASHVALUE_INORDER(hh,head,fieldname,keylen_in,hashval,add,cmpfcn) \
+indexes/uthash.h:399:  HASH_ADD_KEYPTR_BYHASHVALUE_INORDER(hh, head, &((add)->fieldname), keylen_in, hashval, add, cmpfcn)
+indexes/uthash.h:401:#define HASH_ADD_INORDER(hh,head,fieldname,keylen_in,add,cmpfcn)                 \
+indexes/uthash.h:402:  HASH_ADD_KEYPTR_INORDER(hh, head, &((add)->fieldname), keylen_in, add, cmpfcn)
+indexes/uthash.h:404:#define HASH_ADD_KEYPTR_BYHASHVALUE(hh,head,keyptr,keylen_in,hashval,add)        \
+indexes/uthash.h:408:  (add)->hh.key = (char*) (keyptr);                                              \
+indexes/uthash.h:409:  (add)->hh.keylen = (unsigned) (keylen_in);                                     \
+indexes/uthash.h:421:  HASH_ADD_TO_TABLE(hh, head, keyptr, keylen_in, hashval, add, _ha_oomed);       \
+indexes/uthash.h:425:#define HASH_ADD_KEYPTR(hh,head,keyptr,keylen_in,add)                            \
+indexes/uthash.h:428:  HASH_VALUE(keyptr, keylen_in, _ha_hashv);                                      \
+indexes/uthash.h:429:  HASH_ADD_KEYPTR_BYHASHVALUE(hh, head, keyptr, keylen_in, _ha_hashv, add);      \
+indexes/uthash.h:432:#define HASH_ADD_BYHASHVALUE(hh,head,fieldname,keylen_in,hashval,add)            \
+indexes/uthash.h:433:  HASH_ADD_KEYPTR_BYHASHVALUE(hh, head, &((add)->fieldname), keylen_in, hashval, add)
+indexes/uthash.h:435:#define HASH_ADD(hh,head,fieldname,keylen_in,add)                                \
+indexes/uthash.h:436:  HASH_ADD_KEYPTR(hh, head, &((add)->fieldname), keylen_in, add)
+indexes/uthash.h:490:    unsigned _uthash_hfstr_keylen = (unsigned)uthash_strlen(findstr);            \
+indexes/uthash.h:491:    HASH_FIND(hh, head, findstr, _uthash_hfstr_keylen, out);                     \
+indexes/uthash.h:495:    unsigned _uthash_hastr_keylen = (unsigned)uthash_strlen((add)->strfield);    \
+indexes/uthash.h:496:    HASH_ADD(hh, head, strfield[0], _uthash_hastr_keylen, add);                  \
+indexes/uthash.h:500:    unsigned _uthash_hrstr_keylen = (unsigned)uthash_strlen((add)->strfield);    \
+indexes/uthash.h:501:    HASH_REPLACE(hh, head, strfield[0], _uthash_hrstr_keylen, add, replaced);    \
+indexes/uthash.h:583:/* When compiled with -DHASH_EMIT_KEYS, length-prefixed keys are emitted to
+indexes/uthash.h:587:#define HASH_EMIT_KEY(hh,head,keyptr,fieldlen)                                   \
+indexes/uthash.h:591:  write(HASH_EMIT_KEYS, keyptr, (unsigned long)fieldlen);                        \
+indexes/uthash.h:594:#define HASH_EMIT_KEY(hh,head,keyptr,fieldlen)
+indexes/uthash.h:605:#define HASH_BER(key,keylen,hashv)                                               \
+indexes/uthash.h:607:  unsigned _hb_keylen = (unsigned)keylen;                                        \
+indexes/uthash.h:608:  const unsigned char *_hb_key = (const unsigned char*)(key);                    \
+indexes/uthash.h:610:  while (_hb_keylen-- != 0U) {                                                   \
+indexes/uthash.h:611:    (hashv) = (((hashv) << 5) + (hashv)) + *_hb_key++;                           \
+indexes/uthash.h:618:#define HASH_SAX(key,keylen,hashv)                                               \
+indexes/uthash.h:621:  const unsigned char *_hs_key = (const unsigned char*)(key);                    \
+indexes/uthash.h:623:  for (_sx_i=0; _sx_i < keylen; _sx_i++) {                                       \
+indexes/uthash.h:624:    hashv ^= (hashv << 5) + (hashv >> 2) + _hs_key[_sx_i];                       \
+indexes/uthash.h:628:#define HASH_FNV(key,keylen,hashv)                                               \
+indexes/uthash.h:631:  const unsigned char *_hf_key = (const unsigned char*)(key);                    \
+indexes/uthash.h:633:  for (_fn_i=0; _fn_i < keylen; _fn_i++) {                                       \
+indexes/uthash.h:634:    hashv = hashv ^ _hf_key[_fn_i];                                              \
+indexes/uthash.h:639:#define HASH_OAT(key,keylen,hashv)                                               \
+indexes/uthash.h:642:  const unsigned char *_ho_key=(const unsigned char*)(key);                      \
+indexes/uthash.h:644:  for(_ho_i=0; _ho_i < keylen; _ho_i++) {                                        \
+indexes/uthash.h:645:      hashv += _ho_key[_ho_i];                                                   \
+indexes/uthash.h:667:#define HASH_JEN(key,keylen,hashv)                                               \
+indexes/uthash.h:670:  unsigned const char *_hj_key=(unsigned const char*)(key);                      \
+indexes/uthash.h:673:  _hj_k = (unsigned)(keylen);                                                    \
+indexes/uthash.h:675:    _hj_i +=    (_hj_key[0] + ( (unsigned)_hj_key[1] << 8 )                      \
+indexes/uthash.h:676:        + ( (unsigned)_hj_key[2] << 16 )                                         \
+indexes/uthash.h:677:        + ( (unsigned)_hj_key[3] << 24 ) );                                      \
+indexes/uthash.h:678:    _hj_j +=    (_hj_key[4] + ( (unsigned)_hj_key[5] << 8 )                      \
+indexes/uthash.h:679:        + ( (unsigned)_hj_key[6] << 16 )                                         \
+indexes/uthash.h:680:        + ( (unsigned)_hj_key[7] << 24 ) );                                      \
+indexes/uthash.h:681:    hashv += (_hj_key[8] + ( (unsigned)_hj_key[9] << 8 )                         \
+indexes/uthash.h:682:        + ( (unsigned)_hj_key[10] << 16 )                                        \
+indexes/uthash.h:683:        + ( (unsigned)_hj_key[11] << 24 ) );                                     \
+indexes/uthash.h:687:     _hj_key += 12;                                                              \
+indexes/uthash.h:690:  hashv += (unsigned)(keylen);                                                   \
+indexes/uthash.h:692:    case 11: hashv += ( (unsigned)_hj_key[10] << 24 ); /* FALLTHROUGH */         \
+indexes/uthash.h:693:    case 10: hashv += ( (unsigned)_hj_key[9] << 16 );  /* FALLTHROUGH */         \
+indexes/uthash.h:694:    case 9:  hashv += ( (unsigned)_hj_key[8] << 8 );   /* FALLTHROUGH */         \
+indexes/uthash.h:695:    case 8:  _hj_j += ( (unsigned)_hj_key[7] << 24 );  /* FALLTHROUGH */         \
+indexes/uthash.h:696:    case 7:  _hj_j += ( (unsigned)_hj_key[6] << 16 );  /* FALLTHROUGH */         \
+indexes/uthash.h:697:    case 6:  _hj_j += ( (unsigned)_hj_key[5] << 8 );   /* FALLTHROUGH */         \
+indexes/uthash.h:698:    case 5:  _hj_j += _hj_key[4];                      /* FALLTHROUGH */         \
+indexes/uthash.h:699:    case 4:  _hj_i += ( (unsigned)_hj_key[3] << 24 );  /* FALLTHROUGH */         \
+indexes/uthash.h:700:    case 3:  _hj_i += ( (unsigned)_hj_key[2] << 16 );  /* FALLTHROUGH */         \
+indexes/uthash.h:701:    case 2:  _hj_i += ( (unsigned)_hj_key[1] << 8 );   /* FALLTHROUGH */         \
+indexes/uthash.h:702:    case 1:  _hj_i += _hj_key[0];                                                \
+indexes/uthash.h:718:#define HASH_SFH(key,keylen,hashv)                                               \
+indexes/uthash.h:720:  unsigned const char *_sfh_key=(unsigned const char*)(key);                     \
+indexes/uthash.h:721:  uint32_t _sfh_tmp, _sfh_len = (uint32_t)keylen;                                \
+indexes/uthash.h:729:    hashv    += get16bits (_sfh_key);                                            \
+indexes/uthash.h:730:    _sfh_tmp  = ((uint32_t)(get16bits (_sfh_key+2)) << 11) ^ hashv;              \
+indexes/uthash.h:732:    _sfh_key += 2U*sizeof (uint16_t);                                            \
+indexes/uthash.h:738:    case 3: hashv += get16bits (_sfh_key);                                       \
+indexes/uthash.h:740:            hashv ^= (uint32_t)(_sfh_key[sizeof (uint16_t)]) << 18;              \
+indexes/uthash.h:743:    case 2: hashv += get16bits (_sfh_key);                                       \
+indexes/uthash.h:747:    case 1: hashv += *_sfh_key;                                                  \
+indexes/uthash.h:803:#define HASH_MUR(key,keylen,hashv)                                     \
+indexes/uthash.h:805:  const uint8_t *_mur_data = (const uint8_t*)(key);                    \
+indexes/uthash.h:806:  const int _mur_nblocks = (int)(keylen) / 4;                          \
+indexes/uthash.h:826:  switch ((keylen) & 3U) {                                             \
+indexes/uthash.h:836:  _mur_h1 ^= (uint32_t)(keylen);                                       \
+indexes/uthash.h:843:#define HASH_FIND_IN_BKT(tbl,hh,head,keyptr,keylen_in,hashval,out)               \
+indexes/uthash.h:851:    if ((out)->hh.hashv == (hashval) && (out)->hh.keylen == (keylen_in)) {       \
+indexes/uthash.h:852:      if (HASH_KEYCMP((out)->hh.key, keyptr, keylen_in) == 0) {              \
+indexes/uthash.h:906: * the hash function as it applies to the key domain).
+indexes/uthash.h:1092:          _dst_hh->key = _src_hh->key;                                           \
+indexes/uthash.h:1093:          _dst_hh->keylen = _src_hh->keylen;                                     \
+indexes/uthash.h:1211:    * function isn't a good fit for the key domain. When expansion is inhibited
+indexes/uthash.h:1230:   void *key;                        /* ptr to enclosing struct's key  */
+indexes/uthash.h:1231:   unsigned keylen;                  /* enclosing struct's key len     */
+indexes/uthash.h:1232:   unsigned hashv;                   /* result of hash-fcn(key)        */
+indexes/rax.h:41: * word. When the node represents a key inside the radix tree, we write it
+indexes/rax.h:76: * For instance if a key "first" is added in the above radix tree, a
+indexes/rax.h:95: * is created (the chain must also not include nodes that represent keys),
+indexes/rax.h:102:    uint32_t iskey:1;     /* Does this node contain a key? */
+indexes/rax.h:124:     * Both compressed and not compressed nodes can represent a key
+indexes/rax.h:128:     * If the node has an associated key (iskey=1) and is not NULL
+indexes/rax.h:156: * including nodes not representing keys. If the callback returns true
+indexes/rax.h:181:    unsigned char *key;     /* The current string. */
+indexes/rax.h:182:    void *data;             /* Data associated to this key. */
+indexes/rax.h:183:    size_t key_len;         /* Current key length. */
+indexes/rax.h:184:    size_t key_max;         /* Max key len the current key buffer can hold. */
+indexes/rax.h:185:    unsigned char key_static_string[RAX_ITER_STATIC_LEN];
+indexes/rax.h:207:int raxCompare(raxIterator *iter, const char *op, unsigned char *key, size_t key_len);
+Binary file indexes/rax.o matches
+indexes/art.h:21: * GCC 4.2.2's C99 inline keyword support is pretty broken; avoid. Introduced in
+indexes/art.h:29:typedef int(*art_callback)(void *data, const unsigned char *key, uint32_t key_len, void *value);
+indexes/art.h:47:    unsigned char keys[4];
+indexes/art.h:56:    unsigned char keys[16];
+indexes/art.h:66:    unsigned char keys[256];
+indexes/art.h:80: * of arbitrary size, as they include the key.
+indexes/art.h:84:    uint32_t key_len;
+indexes/art.h:85:    unsigned char key[];
+indexes/art.h:136: * @arg key The key
+indexes/art.h:137: * @arg key_len The length of the key
+indexes/art.h:142:void* art_insert(art_tree *t, const unsigned char *key, int key_len, void *value);
+indexes/art.h:147: * @arg key The key
+indexes/art.h:148: * @arg key_len The length of the key
+indexes/art.h:152:void* art_delete(art_tree *t, const unsigned char *key, int key_len);
+indexes/art.h:157: * @arg key The key
+indexes/art.h:158: * @arg key_len The length of the key
+indexes/art.h:162:void* art_search(const art_tree *t, const unsigned char *key, int key_len);
+indexes/art.h:179: * key, value for each and returns an integer stop value.
+indexes/art.h:191: * The call back gets a key, value for each and returns an integer stop value.
+indexes/art.h:194: * @arg prefix The prefix of keys to read
+indexes/art.h:204: * Get the n keys following a keys
+indexes/art.h:206:struct index_scan art_find_n(art_tree *t, const unsigned char *key, int key_len, size_t n);
+indexes/rbtree.h:37:    void* key;
+indexes/rbtree.h:55:index_entry_t* rbtree_lookup(rbtree t, void* key, compare_func compare);
+indexes/rbtree.h:56:void rbtree_insert(rbtree t, void* key, index_entry_t* value, compare_func compare);
+indexes/rbtree.h:57:void rbtree_delete(rbtree t, void* key, compare_func compare);
+indexes/rbtree.h:63:struct rbtree_scan_tmp rbtree_lookup_n(rbtree t, void *key, size_t n, compare_func compare);
+indexes/rax.c:163:    (((n)->iskey && !(n)->isnull) ? sizeof(void*) : 0) \
+indexes/rax.c:179:    (((n)->iskey && !(n)->isnull)*sizeof(void*)) \
+indexes/rax.c:192:    node->iskey = 0;
+indexes/rax.c:225:    n->iskey = 1;
+indexes/rax.c:315:    if (n->iskey && !n->isnull) {
+indexes/rax.c:389: * and having exactly one child each. The node can be a key or not: this
+indexes/rax.c:408:    if (n->iskey) {
+indexes/rax.c:422:    if (n->iskey) raxSetData(n,data);
+indexes/rax.c:430: * of the key that was possible to process: if the returned integer
+indexes/rax.c:432: * string was found (however it may not be a key in case the node->iskey is
+indexes/rax.c:449: * 'len' argument (all the key matched), and will return a *splitpos which is
+indexes/rax.c:454: * means that the current node represents the key (that is, none of the
+indexes/rax.c:455: * compressed node characters are needed to represent the key, just all
+indexes/rax.c:491:                  the searched key. */
+indexes/rax.c:520:     * inserted or this middle node is currently not a key, but can represent
+indexes/rax.c:521:     * our key. We have just to reallocate the node and make space for the
+indexes/rax.c:524:        debugf("### Insert: node representing key exists\n");
+indexes/rax.c:526:        if (!h->iskey || (h->isnull && overwrite)) {
+indexes/rax.c:535:        /* Update the existing key if there is already one. */
+indexes/rax.c:536:        if (h->iskey) {
+indexes/rax.c:543:        /* Otherwise set the node as a key. Note that raxSetData()
+indexes/rax.c:544:         * will set h->iskey. */
+indexes/rax.c:618:     *    at the compressed node. The other non common letter (at the key)
+indexes/rax.c:653:     * there were no more keys character to match. So in the example of
+indexes/rax.c:662:     *    Set the node as a key with the associated value of the new
+indexes/rax.c:663:     *    inserted key.
+indexes/rax.c:667:     *    Take the iskey / associated value as it was in the orignal node.
+indexes/rax.c:680:        debugf("Other (key) letter is '%c'\n", s[i]);
+indexes/rax.c:687:        debugf("iskey %d\n", h->iskey);
+indexes/rax.c:688:        if (h->iskey) {
+indexes/rax.c:689:            debugf("key value is %p\n", raxGetData(h));
+indexes/rax.c:695:        int split_node_is_key = !trimmedlen && h->iskey && !h->isnull;
+indexes/rax.c:700:        raxNode *splitnode = raxNewNode(1, split_node_is_key);
+indexes/rax.c:707:            if (h->iskey && !h->isnull) nodesize += sizeof(void*);
+indexes/rax.c:732:            if (h->iskey) {
+indexes/rax.c:742:            trimmed->iskey = h->iskey;
+indexes/rax.c:744:            if (h->iskey && !h->isnull) {
+indexes/rax.c:759:            postfix->iskey = 0;
+indexes/rax.c:778:         * inserted key). */
+indexes/rax.c:794:        if (h->iskey && !h->isnull) nodesize += sizeof(void*);
+indexes/rax.c:812:        postfix->iskey = 1;
+indexes/rax.c:823:        trimmed->iskey = 0;
+indexes/rax.c:827:        if (h->iskey) {
+indexes/rax.c:838:         * algorithm for ALGO 2. The key is already inserted. */
+indexes/rax.c:879:    if (!h->iskey) rax->numele++;
+indexes/rax.c:886:     * already modified. Set the node as a key, and then remove it. However we
+indexes/rax.c:892:        h->iskey = 1;
+indexes/rax.c:901: * update the element if there is already one for the same key. */
+indexes/rax.c:906:/* Non overwriting insert function: this if an element with the same key
+indexes/rax.c:913:/* Find a key in the rax, returns raxNotFound special void pointer value
+indexes/rax.c:922:    if (i != len || (h->iscompr && splitpos != 0) || !h->iskey)
+indexes/rax.c:954:        if (parent->iskey) data = raxGetData(parent);
+indexes/rax.c:958:        if (parent->iskey) raxSetData(parent,data);
+indexes/rax.c:1001:    size_t valuelen = (parent->iskey && !parent->isnull) ? sizeof(void*) : 0;
+indexes/rax.c:1028:    if (i != len || (h->iscompr && splitpos != 0) || !h->iskey) {
+indexes/rax.c:1033:    h->iskey = 0;
+indexes/rax.c:1039:     * that are not keys, until the head of the rax is reached or the first
+indexes/rax.c:1050:            debugf("Freeing child %p [%.*s] key:%d\n", (void*)child,
+indexes/rax.c:1051:                (int)child->size, (char*)child->data, child->iskey);
+indexes/rax.c:1056:              * a key, stop here. */
+indexes/rax.c:1057:            if (h->iskey || (!h->iscompr && h->size != 1)) break;
+indexes/rax.c:1075:             * and is not a key, we need to try to compress it. */
+indexes/rax.c:1076:            if (new->size == 1 && new->iskey == 0) {
+indexes/rax.c:1082:        /* If the node had just one child, after the removal of the key
+indexes/rax.c:1094:     * keys and have a single child, so there are two deletion events that
+indexes/rax.c:1097:     * 1) A node with a single child was a key and now no longer is a key.
+indexes/rax.c:1101:     * compressed, when we reach the upper node which is not a key and has
+indexes/rax.c:1107:     * Example of case "1". A tree stores the keys "FOO" = 1 and
+indexes/rax.c:1119:     * Example of case "2". A tree stores the keys "FOOBAR" = 1 and
+indexes/rax.c:1145:            if (!parent || parent->iskey ||
+indexes/rax.c:1158:            if (h->iskey || (!h->iscompr && h->size != 1)) break;
+indexes/rax.c:1176:            new->iskey = 0;
+indexes/rax.c:1194:                if (h->iskey || (!h->iscompr && h->size != 1)) break;
+indexes/rax.c:1232:    if (free_callback && n->iskey && !n->isnull)
+indexes/rax.c:1259:    it->key_len = 0;
+indexes/rax.c:1260:    it->key = it->key_static_string;
+indexes/rax.c:1261:    it->key_max = RAX_ITER_STATIC_LEN;
+indexes/rax.c:1267:/* Append characters at the current key string of the iterator 'it'. This
+indexes/rax.c:1271:    if (it->key_max < it->key_len+len) {
+indexes/rax.c:1272:        unsigned char *old = (it->key == it->key_static_string) ? NULL :
+indexes/rax.c:1273:                                                                  it->key;
+indexes/rax.c:1274:        size_t new_max = (it->key_len+len)*2;
+indexes/rax.c:1275:        it->key = rax_realloc(old,new_max);
+indexes/rax.c:1276:        if (it->key == NULL) {
+indexes/rax.c:1277:            it->key = (!old) ? it->key_static_string : old;
+indexes/rax.c:1281:        if (old == NULL) memcpy(it->key,it->key_static_string,it->key_len);
+indexes/rax.c:1282:        it->key_max = new_max;
+indexes/rax.c:1285:     * it->key when we use the current key in order to re-seek. */
+indexes/rax.c:1286:    memmove(it->key+it->key_len,s,len);
+indexes/rax.c:1287:    it->key_len += len;
+indexes/rax.c:1292: * iterator key. */
+indexes/rax.c:1294:    it->key_len -= count;
+indexes/rax.c:1298: * iterator key will represent the (new) current key. If it is not possible
+indexes/rax.c:1304: * to be the parent of the last key node, so the first operation to go back to
+indexes/rax.c:1307: * the starting node is not a key in that particular case, so we start the scan
+indexes/rax.c:1308: * from a node that does not represent the key set.
+indexes/rax.c:1319:    /* Save key len, stack items and the node where we are currently
+indexes/rax.c:1320:     * so that on iterator EOF we can restore the current key and state. */
+indexes/rax.c:1321:    size_t orig_key_len = it->key_len;
+indexes/rax.c:1329:            /* Seek the lexicographically smaller key in this subtree, which
+indexes/rax.c:1341:            /* For "next" step, stop every time we find a key along the
+indexes/rax.c:1342:             * way, since the key is lexicograhically smaller compared to
+indexes/rax.c:1344:            if (it->node->iskey) {
+indexes/rax.c:1351:             * children representing keys lexicographically greater than the
+indexes/rax.c:1352:             * current key. */
+indexes/rax.c:1360:                    it->key_len = orig_key_len;
+indexes/rax.c:1366:                unsigned char prevchild = it->key[it->key_len-1];
+indexes/rax.c:1372:                /* Adjust the current key to represent the node we are
+indexes/rax.c:1397:                        if (it->node->iskey) {
+indexes/rax.c:1409:/* Seek the greatest key in the subtree at the current node. Return 0 on
+indexes/rax.c:1439:    /* Save key len, stack items and the node where we are currently
+indexes/rax.c:1440:     * so that on iterator EOF we can restore the current key and state. */
+indexes/rax.c:1441:    size_t orig_key_len = it->key_len;
+indexes/rax.c:1452:            it->key_len = orig_key_len;
+indexes/rax.c:1457:        unsigned char prevchild = it->key[it->key_len-1];
+indexes/rax.c:1464:        /* Adjust the current key to represent the node we are
+indexes/rax.c:1482:             * find the key lexicographically greater. */
+indexes/rax.c:1494:        /* Return the key: this could be the key we found scanning a new
+indexes/rax.c:1496:         * before giving up with this node, check if it's a key itself. */
+indexes/rax.c:1497:        if (it->node->iskey) {
+indexes/rax.c:1514:    it->key_len = 0;
+indexes/rax.c:1543:        /* Seeking the first key greater or equal to the empty string
+indexes/rax.c:1544:         * is equivalent to seeking the smaller key available. */
+indexes/rax.c:1549:        /* Find the greatest key taking always the last child till a
+indexes/rax.c:1553:        assert(it->node->iskey);
+indexes/rax.c:1558:    /* We need to seek the specified key. What we do here is to actually
+indexes/rax.c:1559:     * perform a lookup, and later invoke the prev/next key code that
+indexes/rax.c:1568:        it->node->iskey)
+indexes/rax.c:1570:        /* We found our node, since the key matches and we have an
+indexes/rax.c:1575:        /* Exact key not found or eq flag not set. We have to set as current
+indexes/rax.c:1576:         * key the one represented by the node we stopped at, and perform
+indexes/rax.c:1577:         * a next/prev operation to seek. To reconstruct the key at this node
+indexes/rax.c:1604:        debugf("After initial seek: i=%d len=%d key=%.*s\n",
+indexes/rax.c:1605:            (int)i, (int)len, (int)it->key_len, it->key);
+indexes/rax.c:1608:             * mismatch, add the mismatching character to the current key
+indexes/rax.c:1614:                (int)it->key_len, (char*)it->key);
+indexes/rax.c:1622:                (int)it->key_len, (char*)it->key);
+indexes/rax.c:1625:            int keychar = ele[i];
+indexes/rax.c:1628:                /* If the key the compressed node represents is greater
+indexes/rax.c:1631:                if (nodechar > keychar) {
+indexes/rax.c:1640:                /* If the key the compressed node represents is smaller
+indexes/rax.c:1641:                 * than our seek element, seek the greater key in this
+indexes/rax.c:1644:                if (nodechar < keychar) {
+indexes/rax.c:1656:                (int)it->key_len, (char*)it->key);
+indexes/rax.c:1658:             * key, (but which is not a key or the seek operator does not
+indexes/rax.c:1660:             * after processing all the key. Continue iterating as this was
+indexes/rax.c:1661:             * a legitimate key we stopped at. */
+indexes/rax.c:1663:            if (it->node->iscompr && it->node->iskey && splitpos && lt) {
+indexes/rax.c:1665:                 * perfect match, and the condition is to seek a key "<" than
+indexes/rax.c:1666:                 * the specified one, then if this node is a key it already
+indexes/rax.c:1671:                 * Representing keys "f" = 1, "foobar" = 2. A seek for
+indexes/rax.c:1672:                 * the key < "foo" will stop in the middle of the "oobar"
+indexes/rax.c:1673:                 * node, but will be our match, representing the key "f".
+indexes/rax.c:1730: * tree certain keys will be reported much more often than others. At least
+indexes/rax.c:1745:    while(steps > 0 || !n->iskey) {
+indexes/rax.c:1765:        if (n->iskey) steps--;
+indexes/rax.c:1771:/* Compare the key currently pointed by the iterator to the specified
+indexes/rax.c:1772: * key according to the specified operator. Returns 1 if the comparison is
+indexes/rax.c:1774:int raxCompare(raxIterator *iter, const char *op, unsigned char *key, size_t key_len) {
+indexes/rax.c:1782:    size_t minlen = key_len < iter->key_len ? key_len : iter->key_len;
+indexes/rax.c:1783:    int cmp = memcmp(iter->key,key,minlen);
+indexes/rax.c:1786:    if (lt == 0 && gt == 0) return cmp == 0 && key_len == iter->key_len;
+indexes/rax.c:1791:        if (eq && key_len == iter->key_len) return 1;
+indexes/rax.c:1792:        else if (lt) return iter->key_len < key_len;
+indexes/rax.c:1793:        else if (gt) return iter->key_len > key_len;
+indexes/rax.c:1803:    if (it->key != it->key_static_string) rax_free(it->key);
+indexes/rax.c:1824: * all the nodes and the contained keys.
+indexes/rax.c:1830: *  [abc]=0x12345678 (node is a key, pointing to value 0x12345678)
+indexes/rax.c:1853:    if (n->iskey) {
+indexes/rax.c:1890:    printf("%s: %p [%.*s] key:%d size:%d children:",
+indexes/rax.c:1891:        msg, (void*)n, (int)n->size, (char*)n->data, n->iskey, n->size);
+indexes/rax.c:1924:    if (n->iskey) {
+Binary file indexes/rbtree.o matches
+indexes/art.c:96:                idx = ((art_node48*)n)->keys[i];
+indexes/art.c:150:                if (((unsigned char*)p.p1->keys)[i] == c)
+indexes/art.c:161:                // Compare the key to all 16 stored keys
+indexes/art.c:164:                        _mm_loadu_si128((__m128i*)p.p2->keys));
+indexes/art.c:171:                // Compare the key to all 16 stored keys
+indexes/art.c:174:                        _mm_loadu_si128((__m128i*)p.p2->keys));
+indexes/art.c:180:                // Compare the key to all 16 stored keys
+indexes/art.c:183:                    if (p.p2->keys[i] == c)
+indexes/art.c:205:            i = p.p3->keys[c];
+indexes/art.c:229: * the key and node.
+indexes/art.c:231:static int check_prefix(const art_node *n, const unsigned char *key, int key_len, int depth) {
+indexes/art.c:232:    int max_cmp = min(min(n->partial_len, MAX_PREFIX_LEN), key_len - depth);
+indexes/art.c:235:        if (n->partial[idx] != key[depth+idx])
+indexes/art.c:245:static int leaf_matches(const art_leaf *n, const unsigned char *key, int key_len, int depth) {
+indexes/art.c:247:    // Fail if the key lengths are different
+indexes/art.c:248:    if (n->key_len != (uint32_t)key_len) return 1;
+indexes/art.c:250:    // Compare the keys starting at the depth
+indexes/art.c:251:    return memcmp(n->key, key, key_len);
+indexes/art.c:257: * @arg key The key
+indexes/art.c:258: * @arg key_len The length of the key
+indexes/art.c:262:void* art_search(const art_tree *t, const unsigned char *key, int key_len) {
+indexes/art.c:271:            if (!leaf_matches((art_leaf*)n, key, key_len, depth)) {
+indexes/art.c:279:            prefix_len = check_prefix(n, key, key_len, depth);
+indexes/art.c:286:        child = find_child(n, key[depth]);
+indexes/art.c:307:            while (!((const art_node48*)n)->keys[idx]) idx++;
+indexes/art.c:308:            idx = ((const art_node48*)n)->keys[idx] - 1;
+indexes/art.c:333:            while (!((const art_node48*)n)->keys[idx]) idx--;
+indexes/art.c:334:            idx = ((const art_node48*)n)->keys[idx] - 1;
+indexes/art.c:359:static art_leaf* make_leaf(const unsigned char *key, int key_len, void *value) {
+indexes/art.c:360:    art_leaf *l = (art_leaf*)calloc(1, sizeof(art_leaf)+key_len);
+indexes/art.c:362:    l->key_len = key_len;
+indexes/art.c:363:    memcpy(l->key, key, key_len);
+indexes/art.c:368:    int max_cmp = min(l1->key_len, l2->key_len) - depth;
+indexes/art.c:371:        if (l1->key[depth+idx] != l2->key[depth+idx])
+indexes/art.c:394:        n->keys[c] = pos + 1;
+indexes/art.c:399:            if (n->keys[i]) {
+indexes/art.c:400:                new_node->children[i] = n->children[n->keys[i] - 1];
+indexes/art.c:418:            // Compare the key to all 16 stored keys
+indexes/art.c:420:                    _mm_loadu_si128((__m128i*)n->keys));
+indexes/art.c:428:            // Compare the key to all 16 stored keys
+indexes/art.c:430:                    _mm_loadu_si128((__m128i*)n->keys));
+indexes/art.c:435:            // Compare the key to all 16 stored keys
+indexes/art.c:438:                if (c < n->keys[i])
+indexes/art.c:451:            memmove(n->keys+idx+1,n->keys+idx,n->n.num_children-idx);
+indexes/art.c:458:        n->keys[idx] = c;
+indexes/art.c:465:        // Copy the child pointers and populate the key map
+indexes/art.c:469:            new_node->keys[n->keys[i]] = i + 1;
+indexes/art.c:482:            if (c < n->keys[idx]) break;
+indexes/art.c:486:        memmove(n->keys+idx+1, n->keys+idx, n->n.num_children - idx);
+indexes/art.c:491:        n->keys[idx] = c;
+indexes/art.c:498:        // Copy the child pointers and the key map
+indexes/art.c:501:        memcpy(new_node->keys, n->keys,
+indexes/art.c:528:static int prefix_mismatch(const art_node *n, const unsigned char *key, int key_len, int depth) {
+indexes/art.c:529:    int max_cmp = min(min(MAX_PREFIX_LEN, n->partial_len), key_len - depth);
+indexes/art.c:532:        if (n->partial[idx] != key[depth+idx])
+indexes/art.c:540:        max_cmp = min(l->key_len, key_len)- depth;
+indexes/art.c:542:            if (l->key[idx+depth] != key[depth+idx])
+indexes/art.c:549:static void* recursive_insert(art_node *n, art_node **ref, const unsigned char *key, int key_len, void *value, int depth, int *old) {
+indexes/art.c:552:        *ref = (art_node*)SET_LEAF(make_leaf(key, key_len, value));
+indexes/art.c:561:        if (!leaf_matches(l, key, key_len, depth)) {
+indexes/art.c:572:        art_leaf *l2 = make_leaf(key, key_len, value);
+indexes/art.c:577:        memcpy(new_node->n.partial, key+depth, min(MAX_PREFIX_LEN, longest_prefix));
+indexes/art.c:580:        add_child4(new_node, ref, l->key[depth+longest_prefix], SET_LEAF(l));
+indexes/art.c:581:        add_child4(new_node, ref, l2->key[depth+longest_prefix], SET_LEAF(l2));
+indexes/art.c:588:        int prefix_diff = prefix_mismatch(n, key, key_len, depth);
+indexes/art.c:609:            add_child4(new_node, ref, l->key[depth+prefix_diff], n);
+indexes/art.c:610:            memcpy(n->partial, l->key+depth+prefix_diff+1,
+indexes/art.c:615:        art_leaf *l = make_leaf(key, key_len, value);
+indexes/art.c:616:        add_child4(new_node, ref, key[depth+prefix_diff], SET_LEAF(l));
+indexes/art.c:623:    art_node **child = find_child(n, key[depth]);
+indexes/art.c:625:        return recursive_insert(*child, child, key, key_len, value, depth+1, old);
+indexes/art.c:629:    art_leaf *l = make_leaf(key, key_len, value);
+indexes/art.c:630:    add_child(n, ref, key[depth], SET_LEAF(l));
+indexes/art.c:637: * @arg key The key
+indexes/art.c:638: * @arg key_len The length of the key
+indexes/art.c:643:void* art_insert(art_tree *t, const unsigned char *key, int key_len, void *value) {
+indexes/art.c:645:    void *old = recursive_insert(t->root, &t->root, key, key_len, value, 0, &old_val);
+indexes/art.c:665:                new_node->keys[i] = pos + 1;
+indexes/art.c:674:    int pos = n->keys[c];
+indexes/art.c:675:    n->keys[c] = 0;
+indexes/art.c:686:            pos = n->keys[i];
+indexes/art.c:688:                new_node->keys[child] = i;
+indexes/art.c:699:    memmove(n->keys+pos, n->keys+pos+1, n->n.num_children - 1 - pos);
+indexes/art.c:707:        memcpy(new_node->keys, n->keys, 4);
+indexes/art.c:715:    memmove(n->keys+pos, n->keys+pos+1, n->n.num_children - 1 - pos);
+indexes/art.c:726:                n->n.partial[prefix] = n->keys[0];
+indexes/art.c:759:static art_leaf* recursive_delete(art_node *n, art_node **ref, const unsigned char *key, int key_len, int depth) {
+indexes/art.c:766:        if (!leaf_matches(l, key, key_len, depth)) {
+indexes/art.c:775:        int prefix_len = check_prefix(n, key, key_len, depth);
+indexes/art.c:783:    art_node **child = find_child(n, key[depth]);
+indexes/art.c:789:        if (!leaf_matches(l, key, key_len, depth)) {
+indexes/art.c:790:            remove_child(n, ref, key[depth], child);
+indexes/art.c:797:        return recursive_delete(*child, child, key, key_len, depth+1);
+indexes/art.c:804: * @arg key The key
+indexes/art.c:805: * @arg key_len The length of the key
+indexes/art.c:809:void* art_delete(art_tree *t, const unsigned char *key, int key_len) {
+indexes/art.c:810:    art_leaf *l = recursive_delete(t->root, &t->root, key, key_len, 0);
+indexes/art.c:826:        return cb(data, (const unsigned char*)l->key, l->key_len, l->value);
+indexes/art.c:847:                idx = ((art_node48*)n)->keys[i];
+indexes/art.c:872: * key, value for each and returns an integer stop value.
+indexes/art.c:888:    // Fail if the key length is too short
+indexes/art.c:889:    if (n->key_len < (uint32_t)prefix_len) return 1;
+indexes/art.c:891:    // Compare the keys
+indexes/art.c:892:    return memcmp(n->key, prefix, prefix_len);
+indexes/art.c:898: * The call back gets a key, value for each and returns an integer stop value.
+indexes/art.c:901: * @arg prefix The prefix of keys to read
+indexes/art.c:907:int art_iter_prefix(art_tree *t, const unsigned char *key, int key_len, art_callback cb, void *data) {
+indexes/art.c:916:            if (!leaf_prefix_matches((art_leaf*)n, key, key_len)) {
+indexes/art.c:918:                return cb(data, (const unsigned char*)l->key, l->key_len, l->value);
+indexes/art.c:924:        if (depth == key_len) {
+indexes/art.c:926:            if (!leaf_prefix_matches(l, key, key_len))
+indexes/art.c:933:            prefix_len = prefix_mismatch(n, key, key_len, depth);
+indexes/art.c:945:            } else if (depth + prefix_len == key_len) {
+indexes/art.c:954:        child = find_child(n, key[depth]);
+indexes/art.c:964:struct key_index {
+indexes/art.c:965:   unsigned char key;
+indexes/art.c:967:} key_to_index[256];
+indexes/art.c:969:static int cmp_key_index(const void *_a, const void *_b) {
+indexes/art.c:970:   const struct key_index *a = _a;
+indexes/art.c:971:   const struct key_index *b = _b;
+indexes/art.c:972:   if(a->key > b->key)
+indexes/art.c:974:   if(a->key < b->key)
+indexes/art.c:979:static int recursive_iter_ordered(art_node *n, size_t depth, unsigned char *key, size_t len, art_callback cb, void *data, size_t scan_size) {
+indexes/art.c:985:        cb(data, (const unsigned char*)l->key, l->key_len, l->value);
+indexes/art.c:997:    struct key_index key_to_index[256];
+indexes/art.c:1003:               key_to_index[i].key = p.p1->keys[i];
+indexes/art.c:1005:                  key_to_index[i].index = 512;
+indexes/art.c:1007:                  key_to_index[i].index = i;
+indexes/art.c:1010:            qsort(key_to_index, n->num_children, sizeof(*key_to_index), cmp_key_index);
+indexes/art.c:1014:                size_t index = key_to_index[i].index;
+indexes/art.c:1015:                if(index != 512 && key_to_index[i].key >= key[depth]) {
+indexes/art.c:1016:                   res = recursive_iter_ordered(p.p1->children[index], depth+1, key, len, cb, data, scan_size);
+indexes/art.c:1026:               key_to_index[i].key = p.p2->keys[i];
+indexes/art.c:1028:                  key_to_index[i].index = 512;
+indexes/art.c:1030:                  key_to_index[i].index = i;
+indexes/art.c:1033:            qsort(key_to_index, n->num_children, sizeof(*key_to_index), cmp_key_index);
+indexes/art.c:1037:                size_t index = key_to_index[i].index;
+indexes/art.c:1038:                if(index != 512 && key_to_index[i].key >= key[depth]) {
+indexes/art.c:1039:                   res = recursive_iter_ordered(p.p2->children[index], depth+1, key, len, cb, data, scan_size);
+indexes/art.c:1046:            for (int i=key[depth]; i < 256; i++) {
+indexes/art.c:1047:                idx = ((art_node48*)n)->keys[i];
+indexes/art.c:1050:                res = recursive_iter_ordered(((art_node48*)n)->children[idx-1], depth+1, key, len, cb, data, scan_size);
+indexes/art.c:1056:            for (int i=key[depth]; i < 256; i++) {
+indexes/art.c:1058:                res = recursive_iter_ordered(((art_node256*)n)->children[i], depth+1, key, len, cb, data, scan_size);
+indexes/art.c:1069:int art_callback_scan(void *data, const unsigned char *key, uint32_t key_len, void *value) {
+indexes/art.c:1071:   res->hashes[res->nb_entries] = *(uint64_t*)key;
+indexes/art.c:1077:struct index_scan art_find_n(art_tree *t, const unsigned char *key, int key_len, size_t n) {
+indexes/art.c:1083:   recursive_iter_ordered(t->root, 0, (unsigned char*)key, key_len, art_callback_scan, &res, n);
+Binary file in-memory-index-rax.o matches
+Binary file in-memory-index-art.o matches
+cscope.out:3679:key
+cscope.out:3682:->key) > 0) {
+cscope.out:3731:key
+cscope.out:5377:	mkey_size
+cscope.out:9339:key_size
+cscope.out:9371:key_size
+cscope.out:9969:key_size
+cscope.out:10373:key_size
+cscope.out:10383:key_size
+cscope.out:10443:key_size
+cscope.out:10737:key_size
+cscope.out:10771:key_size
+cscope.out:11533:key_size
+cscope.out:15289:key_size
+cscope.out:15315:key_size
+cscope.out:15353:key
+cscope.out:15369:key_size
+cscope.out:15395:key_size
+cscope.out:15411:key_size
+cscope.out:15412: = key_size;
+cscope.out:15435:key_size
+cscope.out:15443:key
+cscope.out:15785:key_size
+cscope.out:16165:key_size
+cscope.out:16177:key_size
+cscope.out:16199:key_size
+cscope.out:19613:	maio_key
+cscope.out:19639:	maio_key
+cscope.out:28881:__key
+cscope.out:28899:__key
+cscope.out:28909:__key
+cscope.out:28919:__key
+cscope.out:36657:__key
+cscope.out:42139:__key
+cscope.out:42337:	tkey
+cscope.out:42381:keys
+cscope.out:42401:keys
+cscope.out:42421:keys
+cscope.out:42461:key
+cscope.out:42559:key
+cscope.out:42573:key
+cscope.out:42585:key
+cscope.out:42651:key
+cscope.out:42823:	miskey
+cscope.out:42961:key
+cscope.out:42977:key_max
+cscope.out:43155:key
+cscope.out:43253:	mkey
+cscope.out:43345:key
+cscope.out:43359:key
+cscope.out:43377:key
+cscope.out:43409:key
+Binary file cscope.out matches
+in-memory-index-rax.c:6:   char *item_key = &item[sizeof(*meta)];
+in-memory-index-rax.c:7:   return *(uint64_t*)item_key;
+in-memory-index-rax.c:49: * Returns up to scan_size keys >= item.key.
+in-memory-index-rax.c:50: * If item is not in the database, this will still return up to scan_size keys > item.key.
+in-memory-index-btree.c:6:   char *item_key = &item[sizeof(*meta)];
+in-memory-index-btree.c:7:   return *(uint64_t*)item_key;
+in-memory-index-btree.c:51: * Returns up to scan_size keys >= item.key.
+in-memory-index-btree.c:52: * If item is not in the database, this will still return up to scan_size keys > item.key.
+Binary file microbench.o matches
+Binary file freelist.o matches
+Binary file slabworker.o matches
+in-memory-index-art.c:6:   char *item_key = &item[sizeof(*meta)];
+in-memory-index-art.c:7:   return *(uint64_t*)item_key;
+in-memory-index-art.c:46: * Returns up to scan_size keys >= item.key.
+in-memory-index-art.c:47: * If item is not in the database, this will still return up to scan_size keys > item.key.
+freelist.c:151:      btree_forall_keys(s->freed_items_recovery, btree_iterator, s);
+random.c:130:   long rand_key = rand_r(&seed);
+random.c:133:      rand_key = 0 + rand_key % 144000000;
+random.c:135:      rand_key = 144000000 + rand_key % (314400000-144000000);
+random.c:137:      rand_key = 314400000 + rand_key % (450000000-314400000);
+random.c:139:      rand_key = 450000000 + rand_key % (480000000-450000000);
+random.c:141:      rand_key = 480000000 + rand_key % (490000000-480000000);
+random.c:143:      rand_key = 490000000 + rand_key % (500000000-490000000);
+random.c:145:   return rand_key;
+random.c:149:   long rand_key = rand_r(&seed);
+random.c:152:      rand_key = rand_key % 47016400;
+random.c:154:      rand_key = 47016400 + rand_key % (259179450 - 47016400);
+random.c:156:      rand_key = 259179450 + rand_key % (386162550 - 259179450);
+random.c:158:      rand_key = 386162550 + rand_key % (422748200 - 386162550);
+random.c:160:      rand_key = 422748200 + rand_key % (442158000 - 422748200);
+random.c:162:      rand_key = 442158000 + rand_key % (448392900 - 442158000) ;
+random.c:164:      rand_key = 448392900 + rand_key % (500000000 - 448392900);
+random.c:166:   return rand_key;
+Binary file in-memory-index-btree.o matches
+Binary file random.o matches
+Binary file ioengine.o matches
+in-memory-index-rbtree.c:6:   char *item_key = &item[sizeof(*meta)];
+in-memory-index-rbtree.c:7:   return *(uint64_t*)item_key;
+in-memory-index-rbtree.c:37: * Returns up to scan_size keys >= item.key.
+in-memory-index-rbtree.c:38: * If item is not in the database, this will still return up to scan_size keys > item.key.
+in-memory-index-rbtree.c:64:            if(!min || pointer_cmp(min->key, current->key) > 0) {
+in-memory-index-rbtree.c:74:      scan_res.hashes[scan_res.nb_entries] = (uint64_t)min->key;
+items.h:13:   size_t key_size;
+items.h:15:   // key
+Binary file microbench matches
+Binary file .git/objects/pack/pack-d0aae6f25999301db00c7cfc55d6460114311463.pack matches
+scripts/parse.pl:29:for my $bench (sort keys %results) {
+scripts/parse.pl:30:   my @keys = sort { $results{$bench}->{throughput}->{$a} <=> $results{$bench}->{throughput}->{$b} } keys %{$results{$bench}->{throughput}};
+scripts/parse.pl:33:   print "File\t".join("\t", @keys)."\n";
+scripts/parse.pl:36:      print "$k\t".join("\t", map { $results{$bench}->{$k}->{$_} } @keys)."\n";
+scripts/plot.gnuplot:12:unset key
+OVERVIEW.md:11:  * Create a request `struct slab_callback *cb`. A request contains an `item = { key, value }` and a callback that is called when the request has been processed.
+OVERVIEW.md:12:  * Enqueue the request in the KV, using one of the `kv_xxx` function (e.g., `kv_read_async(cb)` ). Requests partionned amongst workers based on the prefix of the key modulo number of workers.
+OVERVIEW.md:14:  * For scans, the load injector threads also merges keys from all the in-memory indexes of worker threads. See `btree_init_scan` for instance.
+workload-common.c:9:   meta->key_size = 8;
+workload-common.c:12:   char *item_key = &item[sizeof(*meta)];
+workload-common.c:13:   char *item_value = &item[sizeof(*meta) + meta->key_size];
+workload-common.c:14:   *(uint64_t*)item_key = uid;
+workload-common.c:21:   const uint64_t key = -10;
+workload-common.c:23:   size_t key_size = 16;
+workload-common.c:27:   char *item = malloc(sizeof(*meta) + key_size + value_size);
+workload-common.c:29:   meta->key_size = key_size;
+workload-common.c:32:   char *item_key = &item[sizeof(*meta)];
+workload-common.c:33:   char *item_value = &item[sizeof(*meta) + meta->key_size];
+workload-common.c:34:   *(uint64_t*)item_key = key;
+workload-common.c:104:      char *item_value = &db_item[sizeof(*meta) + meta->key_size];
+workload-common.c:174:   char *item_key = &item[sizeof(*meta)];
+workload-common.c:175:   if(meta->key_size == 0)
+workload-common.c:177:   else if(meta->key_size == -1)
+workload-common.c:180:      printf("[%lu] K=%lu V=%s\n", idx, *(uint64_t*)item_key, &item[sizeof(*meta) + meta->key_size]);
+Binary file slab.o matches
+slab.c:13: * Format is [ [size_t rdt1, size_t key_size1, size_t value_size1][key1][value1][maybe some empty space]     [rdt2, key_size2, value_size2][key2]etc. ]
+slab.c:15: * When an idem is deleted its key_size becomes -1. value_size is then equal to a next free idx in the slab.
+slab.c:39:   if(item->key_size == -1) { // Removed item
+slab.c:43:   } else if(item->key_size != 0) {
+slab.c:138:   if(meta->key_size != 0) { // if the key_size is not 0 then then file has been written before
+slab.c:220:      size_t new_key_size = meta->key_size;
+slab.c:221:      size_t old_key_size = old_meta->key_size;
+slab.c:222:      if(new_key_size != old_key_size) {
+slab.c:223:         die("Updating an item, but key size changed! Likely this is because 2 keys have the same prefix in the index and we got confused because they have the same prefix. TODO: make the index more robust by detecting that 2 keys have the same prefix and transforming the prefix -> slab_idx to prefix -> [ { full key 1, slab_idx1 }, { full key 2, slab_idx2 } ]\n");
+slab.c:226:      char *new_key = &disk_page[offset_in_page + sizeof(*meta)];
+slab.c:227:      char *old_key = &(((char*)old_meta)[sizeof(*meta)]);
+slab.c:228:      if(memcmp(new_key, old_key, new_key_size))
+slab.c:229:         die("Updating an item, but key mismatch! Likely this is because 2 keys have the same prefix in the index. TODO: make the index more robust by detecting that 2 keys have the same prefix and transforming the prefix -> slab_idx to prefix -> [ { full key 1, slab_idx1 }, { full key 2, slab_idx2 } ]\n");
+slab.c:233:   if(meta->key_size == -1)
+slab.c:292:   if(meta->key_size == -1) { // already removed
+slab.c:299:   meta->key_size = -1;
+Binary file main matches
